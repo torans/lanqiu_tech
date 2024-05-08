@@ -10,7 +10,8 @@ interface Props {
 }
 const { currentNav } = Astro.props;
 
-const customLogo = (await fs.stat('./src/assets/logo.svg')).isFile();
+// const customLogo = (await fs.stat('./src/assets/logo.svg')).isFile();
+const customLogo = false;
 
 const socialConfig: Record<string, Record<string, string>> = {
 	bilibili: { icon: 'ri:bilibili-fill' },
