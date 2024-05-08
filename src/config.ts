@@ -4,7 +4,7 @@ export const Site = 'https://astro-blog-zozo.pages.dev';
 export const SiteLanguage = 'zh';
 export const SiteTitle = '兰秋十六';
 export const SiteDescription = '踏歌长行，梦想永在';
-export const FooterDescription = '肆意闪耀';
+export const FooterDescription = '';
 export const AdminName = 'Lanqiu';
 export const PageSize = 15;
 
