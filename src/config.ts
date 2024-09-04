@@ -8,6 +8,13 @@ export const FooterDescription = '';
 export const AdminName = 'Lanqiu';
 export const PageSize = 15;
 
+export  const getRunDays = () => {
+	const now = new Date();
+	const start = new Date('2024-05-07');
+	const diff = now.getTime() - start.getTime();
+	return Math.floor(diff / (1000 * 60 * 60 * 24));
+};
+
 // socialPlatform => userName
 // check components/Header.astro socialConfig for more info
 export const Socials: Record<string, Record<string, string>> = {
