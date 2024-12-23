@@ -6,6 +6,7 @@ import Comments from '~/components/Comments.astro';
 import type { PostHideElements } from '~/content/config';
 import { Hide, type HideElements } from '~/config';
 import 'katex/dist/katex.css';
+import { SocialShare } from 'astro-social-share';
 
 type Props = CollectionEntry<'posts'>['data'] & {
 	currentNav?: string;
@@ -73,6 +74,10 @@ const showTimes = showDate || showLastmod || showReadingTime;
 			)
 		}
 	</div>
+  <SocialShare
+    description={title?.slice(0, 200)}
+    title={title}
+  />
 	<article
 		class:list={[
 			'prose',

@@ -26,11 +26,6 @@ if (typeof remarkPluginFrontmatter.lastmod === 'string') {
 }
 post.data.readingTime = remarkPluginFrontmatter.readingTime;
 ---
-
-<SocialShare
-  description={post.data.description}
-  title={post.data.title}
-/>
 <MarkdownLayout {...post.data} socialImage={socialImage} currentNav="Blog">
 	<Content />
 </MarkdownLayout>
