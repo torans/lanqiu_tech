@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="615c6047-8121-4179-952b-125a863b92aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/content/posts/08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/posts/customizing-data-transformations-with-laravel-casts.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/content/posts/discover-file-downloads-in-laravel-with-storage-download-laravel-news.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/posts/01.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/posts/01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/posts/02.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/posts/02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/posts/04.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/posts/04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/posts/05.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/posts/05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/posts/06.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/posts/06.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/posts/customizing-data-transformations-with-laravel-casts.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/posts/customizing-data-transformations-with-laravel-casts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/posts/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts/[...slug].astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +108,7 @@
       <workItem from="1722828254570" duration="10686000" />
       <workItem from="1723006616757" duration="616000" />
       <workItem from="1725353253078" duration="4197000" />
-      <workItem from="1734941208989" duration="833000" />
+      <workItem from="1734941208989" duration="3202000" />
     </task>
     <servers />
   </component>

@@ -46,6 +46,7 @@
     "astro": "^5.1.1",
     "astro-icon": "^1.1.0",
     "astro-pagefind": "^1.4.0",
+    "astro-social-share": "^2.1.0",
     "katex": "^0.16.9",
     "lxgw-wenkai-screen-web": "^1.321.0",
     "mdast-util-to-string": "^4.0.0",

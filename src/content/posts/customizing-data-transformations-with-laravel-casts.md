@@ -1,5 +1,6 @@
 ---
 title: 'Laravel 自定义转换（Casts）的数据定制化'
+description: 'Laravel 自定义转换（Casts）的数据定制化'
 date: 2024-12-23 16:18:12
 tags: ["技术", "Laravel", "PHP"]
 ---
@@ -9,7 +10,6 @@ Laravel 的自定义转换（custom casts）功能允许我们进行定制化的
 
 ### 电话号码格式化示例
 以下是使用自定义转换进行电话号码格式化的示例代码：
-code:
 ```php
 <?php
   namespace App\Casts;
@@ -37,7 +37,6 @@ code:
 
 ### 地址格式化示例
 以下是使用自定义转换进行地址格式化的示例代码：
-code:
 ```php
 <?php
 namespace App\Casts;
@@ -74,7 +73,6 @@ class Address implements CastsAttributes {
 
 ### 在模型中使用自定义转换
 在模型中，你可以像这样使用自定义转换：
-code:
 ```php
 class User extends Model {
     protected $casts = [

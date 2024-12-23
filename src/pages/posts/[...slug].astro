@@ -2,6 +2,7 @@
 import { type CollectionEntry } from 'astro:content';
 import MarkdownLayout from '~/layouts/MarkdownLayout.astro';
 import { getPosts } from '~/utils/collection';
+import { SocialShare } from "astro-social-share";
 
 export async function getStaticPaths() {
 	return (await getPosts()).map((post) => ({
@@ -26,6 +27,11 @@ if (typeof remarkPluginFrontmatter.lastmod === 'string') {
 post.data.readingTime = remarkPluginFrontmatter.readingTime;
 ---
 
+<SocialShare
+  description={post.data.description}
+  title={post.data.title}
+/>
 <MarkdownLayout {...post.data} socialImage={socialImage} currentNav="Blog">
 	<Content />
 </MarkdownLayout>
+
