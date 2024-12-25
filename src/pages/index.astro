@@ -6,27 +6,37 @@ import {SiteTitle, SiteDescription} from '~/config';
 <MarkdownLayout
   title={SiteTitle}
   description={SiteDescription}
-  hide={['title', 'comments']}
+  hide={['title', 'comments','share']}
   currentNav="Home"
 >
   <div class="flex flex-col items-center gap-4 xl:flex-row">
     <div>
       <h1>Hello,I`am 兰秋十六（Lanqiu）👋</h1>
       <p>
-        90年，男，程序员，爱好众多。 兰秋十六是我用惯了的昵称，没有特殊含义，兰秋是古代七月的雅称。
+        90年，男，程序员，爱好众多。 <a href="https://lanqiu.tech">兰秋十六</a>是我用惯了的昵称，没有特殊含义，兰秋是古代七月的雅称。
       </p>
       <h3>关注方向/Focus:</h3>
       <p>
         AI / Web3 / Crypto
       </p>
-      <h3>社交媒体/Social:</h3>
-      <ul>
-        <li><a target="_blank" href="https://twitter.com/jran41134074">Twitter</a></li>
-        <li><a target="_blank" href="https://github.com/torans">GitHub</a></li>
-        <li><a target="_blank" href="https://www.youtube.com/channel/UCKxOhnKRgxHQ9zWzn6wBejA">YouTube</a></li>
-        <li><a target="_blank" href="https://www.tiktok.com/@lanqiu_tech">TikTok</a></li>
-        <li>lanqiu_tech(Wechat)</li>
-      </ul>
+      <div class="md:flex">
+        <div class="flex-1">
+          <h3>推荐应用/ Applications:</h3>
+          <ul>
+            <li><a target="_blank" href="https://bookmarks.metasouls.space">兰秋书签</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>社交媒体/Social:</h3>
+          <ul>
+            <li><a target="_blank" href="https://twitter.com/jran41134074">Twitter</a></li>
+            <li><a target="_blank" href="https://github.com/torans">GitHub</a></li>
+            <li><a target="_blank" href="https://www.youtube.com/channel/UCKxOhnKRgxHQ9zWzn6wBejA">YouTube</a></li>
+            <li><a target="_blank" href="https://www.tiktok.com/@lanqiu_tech">TikTok</a></li>
+            <li>lanqiu_tech(Wechat)</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </MarkdownLayout>

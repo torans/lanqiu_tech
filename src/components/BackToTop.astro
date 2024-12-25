@@ -16,17 +16,20 @@ import { Icon } from 'astro-icon/components';
 </button>
 
 <script>
-  const backToTop = (document: Document) => {
+  const backToTop = () => {
     if (!window.matchMedia('(min-width: 1024px)').matches) {
       return;
     }
+
     const btn = document.getElementById('back-to-top');
     if (!btn) {
       return;
     }
-    btn.addEventListener('click', () =>
-      document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
-    );
+
+    btn.addEventListener('click', () => {
+      document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     document.addEventListener('scroll', () => {
       if (document.documentElement.scrollTop >= 20) {
         btn.classList.replace('hidden', 'flex');
@@ -35,6 +38,6 @@ import { Icon } from 'astro-icon/components';
       }
     });
   };
-  backToTop(document);
-  document.addEventListener('astro:before-swap', (e) => backToTop(e.newDocument));
+  backToTop();
+  document.addEventListener('astro:before-swap', () => backToTop());
 </script>

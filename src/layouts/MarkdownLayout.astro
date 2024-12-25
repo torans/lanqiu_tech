@@ -12,7 +12,7 @@ type Props = CollectionEntry<'posts'>['data'] & {
 	currentNav?: string;
 	socialImage?: string;
 };
-const { title, date, lastmod, tags, readingTime, hide } = Astro.props;
+const { title, date, lastmod, tags, readingTime, hide,share } = Astro.props;
 const show = (key: string) =>
 	!(Hide.includes(key as HideElements) || hide?.includes(key as PostHideElements));
 const showDate = date && show('date');
@@ -74,10 +74,11 @@ const showTimes = showDate || showLastmod || showReadingTime;
 			)
 		}
 	</div>
-  <SocialShare
-    description={title?.slice(0, 200)}
-    title={title}
-  />
+  {share &&
+    <SocialShare
+      description={title?.slice(0, 200)}
+      title={title}
+    />}
 	<article
 		class:list={[
 			'prose',
