@@ -21,7 +21,7 @@
     "postbuild": "pagefind --site dist && del-cli \"dist/pagefind/*ui*\""
   },
   "dependencies": {
-    "astro": "^4.16.18",
+    "astro": "^5.1.6",
     "nprogress": "^0.2.0"
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "globals": "^15.14.0",
     "hastscript": "^9.0.0",
     "html-entities": "^2.5.2",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "mdast-util-directive": "^3.0.0",
     "mdast-util-to-string": "^4.0.0",
     "medium-zoom": "^1.1.0",
@@ -78,15 +78,13 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.2",
     "unist-util-visit": "^5.0.0",
-    "unocss": "^0.65.3"
+    "unocss": "^65.4.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*": [
-      "eslint"
-    ]
+    "*": "prettier --write --ignore-unknown --cache"
   },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"

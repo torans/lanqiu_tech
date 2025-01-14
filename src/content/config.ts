@@ -30,35 +30,35 @@ const streams = defineCollection({
   schema: streamsSchema,
 })
 
-const feeds = defineCollection({
-  loader: feedLoader({
-    url: 'https://astro.build/rss.xml',
-  }),
-})
+// const feeds = defineCollection({
+//   loader: feedLoader({
+//     url: 'https://astro.build/rss.xml',
+//   }),
+// })
 
-const releases = defineCollection({
-  loader: githubReleasesLoader({
-    loadMode: 'repoList',
-    modeConfig: {
-      repos: [
-        'withastro/astro',
-        'withastro/starlight',
-        'lin-stephanie/astro-loaders',
-        'lin-stephanie/astro-antfustyle-theme',
-      ],
-      monthsBack: 3,
-      entryReturnType: 'byRelease',
-    },
-  }),
-})
+// const releases = defineCollection({
+//   loader: githubReleasesLoader({
+//     loadMode: 'repoList',
+//     modeConfig: {
+//       repos: [
+//         'withastro/astro',
+//         'withastro/starlight',
+//         'lin-stephanie/astro-loaders',
+//         'lin-stephanie/astro-antfustyle-theme',
+//       ],
+//       monthsBack: 3,
+//       entryReturnType: 'byRelease',
+//     },
+//   }),
+// })
 
-const prs = defineCollection({
-  loader: githubPrsLoader({
-    search:
-      'repo:withastro/astro repo:withastro/starlight repo:lin-stephanie/astro-antfustyle-theme',
-    monthsBack: 2,
-  }),
-})
+// const prs = defineCollection({
+//   loader: githubPrsLoader({
+//     search:
+//       'repo:withastro/astro repo:withastro/starlight repo:lin-stephanie/astro-antfustyle-theme',
+//     monthsBack: 2,
+//   }),
+// })
 
 export const collections = {
   pages,
@@ -66,7 +66,7 @@ export const collections = {
   projects,
   changelog,
   streams,
-  feeds,
-  releases,
-  prs,
+  // feeds,
+  // releases,
+  // prs,
 }

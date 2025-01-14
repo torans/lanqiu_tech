@@ -1,0 +1,54 @@
+---
+import Link from '~/components/base/Link.astro'
+import { getUrl } from '~/utils/common'
+import { formatDate } from '~/utils/datetime'
+
+interface Props {
+  idx: number
+  collectionType: string
+  redirect?: string
+  postSlug?: string
+  title: string
+  thumbnail: string
+  video?: boolean
+  radio?: boolean
+  date: string | Date
+  minutesRead?: number
+  platform?: string
+}
+
+const {
+  idx,
+  redirect,
+  collectionType,
+  postSlug,
+  title,
+  thumbnail,
+  video,
+  radio,
+  date,
+  minutesRead,
+  platform,
+} = Astro.props
+---
+
+<div class="slide-item relative group">
+  <Link
+    class="block border-b-none! mb-6 mt-2"
+    href={redirect ?? getUrl(`/${collectionType}/${postSlug}/`)}
+    external={redirect ? true : false}
+  >
+    <div
+      class="flex items-center justify-center bg-gray-100 dark:bg-gray-800 min-h-[200px] max-h-[260px] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
+    >
+      <img
+        class="w-full h-full object-fill transition-transform duration-300 group-hover:scale-105"
+        src={thumbnail || '/public/favicon.svg'}
+        alt={title}
+        onError={(e) => {
+          e.target.src = '/public/favicon.svg'
+        }}
+      />
+    </div>
+  </Link>
+</div>

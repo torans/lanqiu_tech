@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content'
+import PhotosItem from '~/components/views/PhotosItem.astro'
+import { getYear } from '~/utils/datetime'
+import { getFilteredPosts, getSortedPosts } from '~/utils/post'
+import { FEATURES } from '~/config'
+
+import type {
+  CollectionEntry,
+  ContentCollectionKey,
+  DataCollectionKey,
+} from 'astro:content'
+
+interface Props {
+  collectionType: ContentCollectionKey | DataCollectionKey
+  pageToc: boolean
+}
+
+const { collectionType, pageToc } = Astro.props
+const validCollectionType = ['photographs']
+
+/* Toc */
+const { toc } = FEATURES
+const tocEnabled = Array.isArray(toc) && toc[0] && pageToc
+let years: string[] = []
+
+/* Posts */
+let blogItems: CollectionEntry<ContentCollectionKey>[]
+let sortedBlogItems: CollectionEntry<ContentCollectionKey>[] = []
+
+blogItems = await getFilteredPosts(collectionType)
+sortedBlogItems = getSortedPosts(blogItems)
+
+if (tocEnabled) {
+  const yearsSet = new Set<number>()
+  sortedBlogItems.forEach((item) => {
+    const year = getYear(item.data.pubDate)
+    yearsSet.add(year)
+  })
+
+  years = Array.from(yearsSet)
+    .sort((a, b) => b - a)
+    .map((year) => year.toString())
+}
+
+/* Exception */
+const warningHTML = `The '${collectionType}' collection type does not
+  belong to the built-in types 'blog', 'feeds', or 'streams'. You may
+  need to modify the <code>ListView.astro</code> logic for your defined
+  collection types to render the list.`
+---
+
+{/* {tocEnabled && <Toc {years} />} */}
+
+{
+  (
+    <div aria-label="Post list" class="grid grid-cols-4 gap-4">
+      {sortedBlogItems.length === 0 ? (
+        <div class="py-2 op-50">nothing here yet</div>
+      ) : (
+        sortedBlogItems.map(async (item, idx) => {
+          const { data, slug } = item
+          const { remarkPluginFrontmatter } = await item.render()
+          const minutesRead =
+            data.minutesRead || remarkPluginFrontmatter.minutesRead
+
+          return (
+            <>
+              <PhotosItem
+                {idx}
+                {collectionType}
+                redirect={data.redirect}
+                postSlug={slug}
+                title={data.title}
+                thumbnail={data.thumbnail}
+                video={data.video}
+                radio={data.radio}
+                date={data.pubDate}
+                {minutesRead}
+                platform={data.platform}
+              />
+            </>
+          )
+        })
+      )}
+    </div>
+  )
+}
+
+{
+  !validCollectionType.includes(collectionType) && (
+    <Warning rawHTMLString={warningHTML} />
+  )
+}

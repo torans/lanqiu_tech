@@ -1,0 +1,31 @@
+---
+title: Calligraphy / 手写作品
+subtitle: 人吧，活着就要活那一线光，人谁不想往亮的地方走？
+description: 兰秋十六的手写作品集
+bgType: dot
+toc: true
+ogImage: false
+---
+
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import StandardLayout from '~/layouts/StandardLayout.astro'
+import WorksView from '~/components/views/WorksView.astro'
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  bgType={frontmatter.bgType}
+  ogImage={frontmatter.ogImage}
+>
+  <StandardLayout
+    title={frontmatter.title}
+    subtitle={frontmatter.subtitle}
+    isCentered={true}
+  >
+    <WorksView
+      slot="wide"
+      collectionType="calligraphy"
+      pageToc={frontmatter.toc}
+    />
+  </StandardLayout>
+</BaseLayout>

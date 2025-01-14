@@ -1,122 +1,48 @@
-Glad you made it here! This is a customizable, feature-rich :link[Astro]{id=withastro/astro} theme for blog and portfolio creation, inspired by the minimalist style of :link[antfu.me]{link=https://antfu.me/ imageUrl=https://antfu.me/favicon.svg}. The design has been refined and its functionality expanded for greater flexibility.
+Hello,I`am Jran（兰秋十六）.👋
 
-This live demo will guide you through setup and customization, offering helpful insights along the way. Enjoy exploring all the features this theme provides! ✨
+中年大叔，热爱全栈开发，擅长从前端到后端的各类技术，喜欢用代码解决问题。工作之余，我痴迷书法，享受笔墨间的宁静与艺术；也热爱旅行，探索世界的美好与未知。篮球是我保持活力的方式，音乐则是生活中不可或缺的调味剂。我相信技术与艺术的结合能让生活更加丰富多彩，也希望通过不断学习和实践，在开发与爱好中找到平衡与乐趣。
 
-**Optimized Infrastructure**
+I am a middle-aged man with a passion for full-stack development, skilled in a wide range of technologies from front-end to back-end, and I enjoy solving problems through coding. In my spare time, I am deeply immersed in calligraphy, finding peace and artistry in the strokes of the brush. I also love traveling, exploring the beauty and mysteries of the world. Basketball keeps me active, while music adds an essential flavor to my life. I believe that the fusion of technology and art can make life more vibrant and fulfilling. Through continuous learning and practice, I aim to find a balance and joy between my professional work and personal hobbies.
 
-- Zero UI Framework
-- [SEO-friendly](./blog/faqs-and-known-issues/#about-seo-and-accessibility)
-- Auto-generated RSS Feed
-- Support for [Subpath Deployment](./blog/basic-configuration/#configuring-site)
-- Optimized Local Image Handling
-- VS Code Snippets for Quick Coding
-- Well-organized [Project Structure](./blog/project-structure/)
-- Outstanding [Lighthouse Performance](./blog/faqs-and-known-issues/#lighthouse-scores)
+**技术栈 / Tech Stacks:**
 
-**Content Management**
+  <div slot="head" class="flex flex-wrap justify-start items-center gap-2">
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">Kubernetes</p>
+      </a>
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">Kubernetes</p>
+      </a>
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">Node.js</p>
+      </a>
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">PHP</p>
+      </a>
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">Web3</p>
+      </a>
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">Flutter</p>
+      </a>
+      <a class="btn-black" href=''>
+        <p class="inline-block my-0! ml-1.5">Node.js</p>
+      </a>
+  </div>
 
-- Type Safety
-- Markdown & MDX Support
-- KaTeX Math Integration
-- [Dynamic OG Image Generation](./blog/about-open-graph-images/)
-- [Callouts (Alerts / Admonitions)](./blog/markdown-mdx-extended-features/#callouts-alerts--admonitions)
-- [Directive Sugar](./blog/markdown-mdx-extended-features/#image-caption--link) for Both Markdown/MDX
-- [Code Syntax Highlighting & Annotations](./blog/markdown-mdx-extended-features/#fully-featured-code-blocks)
-- Customizable Animated Backgrounds (Take a look around!)
-- [Showcase Your GitHub Releases and PRs](./blog/customizing-github-activity-pages)
+**关注我 / Fellow me:**
 
-**User Experience**
+- [Twitter](https://twitter.com/jran41134074)
+- [GitHub](https://github.com/torans)
+- [TikTok](https://www.tiktok.com/@lanqiu_tech)
+- [Zhihu](https://www.zhihu.com/people/demo.ran)
 
-- Responsive Layout
-- Full-platform TOC support
-- Light & Dark Modes Toggle
-- Smooth View Transitions
-- Loading Progress Indicator
-- [Image Zoom](./blog/faqs-and-known-issues/#image-zoom) Preview
-- [Search Functionality](./blog/faqs-and-known-issues/#search-functionality)
-- [Accessibility Enhancements](./blog/faqs-and-known-issues/#about-seo-and-accessibility)
-- Social Media Sharing
-- Keyboard-Friendly
+**推荐应用 / Applications:**
 
-> Preparing to upgrade to Astro 5 with [more features](https://github.com/users/lin-stephanie/projects/4)! 🚀
+- [兰秋书签](https://bookmarks.metasouls.space/)
+- [嗨乐学英语](https://hitalk.metasouls.space/)
 
----
+**联系我 / Contact me:**
 
-<p>
-  Visit the theme's
-  <a
-    class="inline-block ml-1.5 op-75 hover:op-100"
-    href="https://github.com/lin-stephanie/astro-antfustyle-theme"
-    target="_blank"
-    aria-label="AntfuStyle on GitHub (external link)"
-  >
-    <span i-simple-icons-github></span>
-    GitHub repo
-  </a>
-</p>
+- Email: Jran8697(#)gmail.com
 
-<p>
-  <span class="inline-block mr-1.5 mb-2">Find me on</span>
-  <span class="inline-flex flex-wrap gap-2 op-75 hover:op-100">
-    <a
-      href="https://github.com/lin-stephanie/astro-antfustyle-theme"
-      target="_blank"
-      aria-label="Find me on GitHub (external link)"
-    >
-      <span i-simple-icons-github></span> GitHub
-    </a>
-    <a
-      href="https://github.com/lin-stephanie/astro-antfustyle-theme"
-      target="_blank"
-      aria-label="Find me on Twitter (external link)"
-    >
-      <span i-ri-twitter-x-fill></span> Twitter
-    </a>
-    <a
-      href="https://github.com/lin-stephanie/astro-antfustyle-theme"
-      target="_blank"
-      aria-label="Find me on Instagram (external link)"
-    >
-      <span i-simple-icons-instagram></span> Instagram
-    </a>
-    <a
-      href="https://github.com/lin-stephanie/astro-antfustyle-theme"
-      target="_blank"
-      aria-label="Find me on Mastodon (external link)"
-    >
-      <span i-simple-icons-mastodon></span> Mastodon
-    </a>
-    <a
-      href="https://github.com/lin-stephanie/astro-antfustyle-theme"
-      target="_blank"
-      aria-label="Find me on YouTube (external link)"
-    >
-      <span i-simple-icons-youtube></span> YouTube
-    </a>
-  </span>
-</p>
-
----
-
-If you find this theme helpful, consider supporting the project maintainer or the style designer. Your support means more than you know. Thank you! ❤️
-
-<div class="flex flex-wrap gap-4">
-  <a
-    class="btn-rose"
-    href="https://github.com/sponsors/lin-stephanie"
-    target="_blank"
-    aria-label="Support Stephanie Lin (external link)"
-  >
-    <div class="i-ph-heart-duotone transition-all ease-out duration-200"></div>
-    Support Stephanie Lin (Maintainer)
-  </a>
-  <a
-    class="btn-yellow"
-    href="https://github.com/sponsors/antfu"
-    target="_blank"
-    aria-label="Support Anthony Fu (external link)"
-  >
-    <div class="i-ph-lightning-duotone transition-all ease-out duration-200"></div>
-    Support Anthony Fu (Designer)
-  </a>
-</div>

@@ -1,47 +1,58 @@
 import type { Site, Ui, Features } from './types'
 
 export const SITE: Site = {
-  website: 'https://astro-antfustyle-theme.vercel.app/',
+  website: 'https://lanqiu.tech/',
   base: '/',
-  title: 'Astro AntfuStyle Theme',
-  description:
-    'A customizable, feature-rich Astro theme for blog and portfolio creation',
-  author: 'Stephanie Lin',
-  lang: 'en',
-  ogLocale: 'en_US',
+  title: '兰秋十六',
+  description: '追光大叔的博客，记录了我的开发、学习、生活。',
+  author: '兰秋十六',
+  lang: ' cn',
+  ogLocale: 'zh_CN',
 }
 
 export const UI: Ui = {
   internalNavs: [
     {
+      path: '/',
+      title: '首页',
+      displayMode: 'alwaysText',
+      text: ' Home/首页',
+    },
+    {
       path: '/blog',
       title: 'Blog',
       displayMode: 'alwaysText',
-      text: 'Blog',
+      text: 'Blog/博客',
     },
+
+    // {
+    //   path: '/projects',
+    //   title: 'Projects',
+    //   displayMode: 'alwaysText',
+    //   text: 'Projects',
+    // },
     {
-      path: '/projects',
-      title: 'Projects',
+      path: '/photographs',
+      title: 'Photographs',
       displayMode: 'alwaysText',
-      text: 'Projects',
+      text: 'Photographs/摄影',
     },
     {
-      path: '/changelog',
-      title: 'Changelog',
-      displayMode: 'iconToTextOnMobile',
-      text: 'Changelog',
-      icon: 'i-ri-draft-line',
+      path: '/calligraphy',
+      title: 'Calligraphy/手写书法作品',
+      displayMode: 'alwaysText',
+      text: 'Calligraphy/手写',
     },
   ],
   socialLinks: [
     {
-      link: 'https://github.com/lin-stephanie/astro-antfustyle-theme',
-      title: 'AntfuStyle on Github',
+      link: 'https://github.com/torans',
+      title: 'Jran on Github',
       displayMode: 'alwaysIcon',
       icon: 'i-uil-github-alt',
     },
     {
-      link: 'https://x.com/astrodotbuild',
+      link: 'https://x.com/jran41134074',
       title: 'Astro on Twitter',
       displayMode: 'alwaysIcon',
       icon: 'i-ri-twitter-x-fill',
