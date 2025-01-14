@@ -1,3 +1,9 @@
+---
+title: "Home"
+description: 兰秋十六的个人主页，博客。
+pubDate: 2024-01-01
+---
+
 Hello,I`am Jran（兰秋十六）.👋
 
 中年大叔，热爱全栈开发，擅长从前端到后端的各类技术，喜欢用代码解决问题。工作之余，我痴迷书法，享受笔墨间的宁静与艺术；也热爱旅行，探索世界的美好与未知。篮球是我保持活力的方式，音乐则是生活中不可或缺的调味剂。我相信技术与艺术的结合能让生活更加丰富多彩，也希望通过不断学习和实践，在开发与爱好中找到平衡与乐趣。
@@ -45,4 +51,3 @@ I am a middle-aged man with a passion for full-stack development, skilled in a w
 **联系我 / Contact me:**
 
 - Email: Jran8697(#)gmail.com
-

@@ -60,12 +60,18 @@ const streams = defineCollection({
 //   }),
 // })
 
+const home = defineCollection({
+  type: 'content',
+  schema: postSchema,
+})
+
 export const collections = {
   pages,
   blog,
   projects,
   changelog,
   streams,
+  home,
   // feeds,
   // releases,
   // prs,
