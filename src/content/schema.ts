@@ -163,6 +163,24 @@ export type ProjectSchema = z.infer<typeof projectSchema>
 export type ProjectGroupsSchema = z.infer<typeof projectGroupsSchema>
 export type ProjectsSchema = z.infer<typeof projectsSchema>
 
+// Friends
+const friendSchema = z.object({
+  name: z.string(),
+  link: z.string().url(),
+  desc: z.string(),
+  icon: z.string(),
+})
+
+const FriendGroupsSchema = z.record(z.array(friendSchema))
+
+export const friendsSchema = z.object({
+  friends: FriendGroupsSchema,
+})
+
+export type FriendSchema = z.infer<typeof friendSchema>
+export type FriendGroupsSchema = z.infer<typeof FriendGroupsSchema>
+export type FriendsSchema = z.infer<typeof friendsSchema>
+
 /* Stremas */
 const streamSchema = z.object({
   title: z.string().describe('**Required**. Sets the stream title.'),

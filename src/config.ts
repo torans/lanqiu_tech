@@ -44,6 +44,12 @@ export const UI: Ui = {
       displayMode: 'alwaysText',
       text: 'Calligraphy/手写',
     },
+    {
+      path: '/friends',
+      title: 'Friends/友情链接',
+      displayMode: 'alwaysText',
+      text: 'Friends/友情链接',
+    },
   ],
   socialLinks: [
     {

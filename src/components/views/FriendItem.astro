@@ -1,0 +1,43 @@
+---
+import Link from '~/components/base/Link.astro'
+import { UI } from '~/config'
+import type { FriendSchema } from '~/content/schema'
+
+interface Props {
+  items: FriendSchema[]
+}
+
+const { items } = Astro.props
+const { maxGroupColumns } = UI.groupView
+---
+
+<div
+  class={`grid gap-3 cols-[repeat(auto-fill,minmax(350px,1fr))]
+    py-8 mx-auto lt-lgp:max-w-[712px]! lt-md:max-w-[350px]!`}
+  style={`max-width: calc(350px * ${maxGroupColumns} + ${maxGroupColumns - 1} * 0.75rem);`}
+>
+  {
+    items.map((item, _) => (
+      <Link
+        class={`link relative flex items-center
+          w-[350px] max-w-full px-3.5 pt-2 pb-3.5 rounded-md
+          bg-transparent hover:bg-[#88888811]
+          text-4.4 transition-all duration-300`}
+        href={item.link}
+        aria-hidden={true}
+        target="_blank"
+        external={true}
+      >
+        <div class="pt-2 pr-5">
+          <div
+            class={`icon op-50 saturate-0 leading-9 text-7.5 ${item.icon}`}
+          />
+        </div>
+        <div class="flex-auto">
+          <div>{item.name}</div>
+          <div class="op-50 text-sm font-normal">{item.desc}</div>
+        </div>
+      </Link>
+    ))
+  }
+</div>

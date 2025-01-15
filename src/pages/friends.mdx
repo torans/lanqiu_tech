@@ -1,0 +1,28 @@
+---
+title: Links / 友情链接
+subtitle: 他们都是最优秀的
+description: They are all the best
+bgType: dot
+toc: true
+ogImage: false
+---
+
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import StandardLayout from '~/layouts/StandardLayout.astro'
+import FriendView from '~/components/views/FriendView.astro'
+import { getUrl } from '~/utils/common'
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  bgType={frontmatter.bgType}
+  ogImage={frontmatter.ogImage}
+>
+  <StandardLayout
+    title={frontmatter.title}
+    subtitle={frontmatter.subtitle}
+    isCentered={true}
+  >
+    <FriendView slot="wide" pageToc={frontmatter.toc} />
+  </StandardLayout>
+</BaseLayout>
