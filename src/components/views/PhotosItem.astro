@@ -45,9 +45,6 @@ const {
         class="w-full h-full object-fill transition-transform duration-300 group-hover:scale-105"
         src={thumbnail || '/public/favicon.svg'}
         alt={title}
-        onError={(e) => {
-          e.target.src = '/public/favicon.svg'
-        }}
       />
     </div>
     <div class="mt-3 px-2 text-center">

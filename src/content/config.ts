@@ -65,6 +65,16 @@ const home = defineCollection({
   schema: postSchema,
 })
 
+const calligraphy = defineCollection({
+  type: 'content',
+  schema: postSchema,
+})
+
+const photographs = defineCollection({
+  type: 'content',
+  schema: postSchema,
+})
+
 export const collections = {
   pages,
   blog,
@@ -72,6 +82,8 @@ export const collections = {
   changelog,
   streams,
   home,
+  calligraphy,
+  photographs,
   // feeds,
   // releases,
   // prs,

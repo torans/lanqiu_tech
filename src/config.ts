@@ -4,8 +4,9 @@ export const SITE: Site = {
   website: 'https://lanqiu.tech/',
   base: '/',
   title: '兰秋十六',
-  description: '追光大叔的博客，记录了我的开发、学习、生活。',
-  author: '兰秋十六',
+  description:
+    '兰秋十六的个人博客，这里是我分享技术开发、学习心得与生活点滴的温暖角落。从代码的世界到生活的细微之处，我用文字与图片记录每一个灵感的闪现、每一次成长的喜悦。',
+  author: 'Jran',
   lang: ' cn',
   ogLocale: 'zh_CN',
 }

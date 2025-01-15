@@ -1,11 +1,8 @@
 ---
-import { getCollection, getEntry } from 'astro:content'
-import Categorizer from '~/components/base/Categorizer.astro'
-import ListItem from '~/components/views/ListItem.astro'
 import WorksItem from '~/components/views/WorksItem.astro'
 import Toc from '~/components/toc/Toc.astro'
 import Warning from '~/components/base/Warning.astro'
-import { isSameYear, getYear } from '~/utils/datetime'
+import { getYear } from '~/utils/datetime'
 import { getFilteredPosts, getSortedPosts } from '~/utils/post'
 import { FEATURES } from '~/config'
 
@@ -14,15 +11,13 @@ import type {
   ContentCollectionKey,
   DataCollectionKey,
 } from 'astro:content'
-import type { StreamGroupsSchema } from '~/content/schema'
-
 interface Props {
   collectionType: ContentCollectionKey | DataCollectionKey
   pageToc: boolean
 }
 
 const { collectionType, pageToc } = Astro.props
-const validCollectionType = ['calligraphy']
+const validCollectionType = ['calligraphy', 'photographs']
 
 /* Toc */
 const { toc } = FEATURES
@@ -30,15 +25,15 @@ const tocEnabled = Array.isArray(toc) && toc[0] && pageToc
 let years: string[] = []
 
 /* Posts */
-let blogItems: CollectionEntry<ContentCollectionKey>[]
-let sortedBlogItems: CollectionEntry<ContentCollectionKey>[] = []
+let workItems: CollectionEntry<ContentCollectionKey>[]
+let sortedWorkItems: CollectionEntry<ContentCollectionKey>[] = []
 
-blogItems = await getFilteredPosts(collectionType)
-sortedBlogItems = getSortedPosts(blogItems)
+workItems = await getFilteredPosts(collectionType)
+sortedWorkItems = getSortedPosts(workItems)
 
 if (tocEnabled) {
   const yearsSet = new Set<number>()
-  sortedBlogItems.forEach((item) => {
+  sortedWorkItems.forEach((item) => {
     const year = getYear(item.data.pubDate)
     yearsSet.add(year)
   })
@@ -60,10 +55,10 @@ const warningHTML = `The '${collectionType}' collection type does not
 {
   (
     <div aria-label="Post list" class="grid grid-cols-2 gap-4">
-      {sortedBlogItems.length === 0 ? (
-        <div class="py-2 op-50">nothing here yet</div>
+      {sortedWorkItems.length === 0 ? (
+        <div class="py-2 op-50 text-align-center">Nothing here yet.</div>
       ) : (
-        sortedBlogItems.map(async (item, idx) => {
+        sortedWorkItems.map(async (item, idx) => {
           const { data, slug } = item
           const { remarkPluginFrontmatter } = await item.render()
           const minutesRead =
@@ -83,6 +78,7 @@ const warningHTML = `The '${collectionType}' collection type does not
                 date={data.pubDate}
                 {minutesRead}
                 platform={data.platform}
+                collectionType={collectionType}
               />
             </>
           )
