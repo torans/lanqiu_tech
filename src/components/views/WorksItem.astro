@@ -1,7 +1,7 @@
 ---
 import Link from '~/components/base/Link.astro'
 import { getUrl } from '~/utils/common'
-import { formatDate } from '~/utils/datetime'
+import { Image } from 'astro:assets'
 
 interface Props {
   idx: number
@@ -41,15 +41,13 @@ const {
     <div
       class="flex items-center justify-center bg-gray-100 dark:bg-gray-800 min-h-[200px] max-h-[260px] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
     >
-      <img
+      <Image
         class="w-full h-full object-fill transition-transform duration-300 group-hover:scale-105"
-        src={thumbnail || '/public/favicon.svg'}
+        src={thumbnail || '/favicon.svg'}
         alt={title}
-        onError={(e) => {
-          e.target.src = '/public/favicon.svg'
-        }}
+        width={100}
+        height={100}
       />
-      <span>{thumbnail}</span>
     </div>
   </Link>
 </div>
