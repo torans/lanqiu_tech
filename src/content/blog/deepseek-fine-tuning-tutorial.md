@@ -161,7 +161,7 @@ def process_data(tokenizer):
         )
         return {"input_ids": inputs["input_ids"].squeeze(0), "attention_mask": inputs["attention_mask"].squeeze(0)}
 
-    return dataset.map(format_example, remove_columns=dataset.column_names)
+    return dataset['train'].map(format_example, remove_columns=dataset['train'].column_names)
 
 # LoRA配置
 peft_config = LoraConfig(
@@ -387,7 +387,7 @@ def process_data(tokenizer):
                 "attention_mask": inputs["attention_mask"].squeeze(0)}
 
     # 应用格式化函数并移除原始列
-    return dataset.map(format_example, remove_columns=dataset.column_names)
+    return dataset['train'].map(format_example, remove_columns=dataset['train'].column_names)
 ```
 
 #### 关键代码
