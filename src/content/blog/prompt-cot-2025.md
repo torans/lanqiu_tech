@@ -6,6 +6,10 @@ tags: ["Prompt工程", "LLM", "CoT思维链", "AI生成优化"]
 categories: ["AI"]
 ---
 
+> 开始之前，记得免费领取火山引擎 DeekSeek  R1 满血版，速度极快。
+>  [点此立即领取](https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&ac=DSASUQY5&rc=ZEWLRBY9)
+
+
 # 一、核心定义与演进历程
 **CoT（Chain-of-Thought）** 是由Google Research团队在2022年提出的突破性推理技术（据澎拜新闻2023-04-29报道），通过引导大语言模型展示推理的中间步骤，显著提升复杂任务的解决能力。2025年最新研究（CSDN 2024-09-24）显示，其推理准确率较传统方法提升58%。
 

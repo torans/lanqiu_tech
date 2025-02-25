@@ -6,7 +6,9 @@ tags: ["Prompt工程", "LLM", "AI生成", "CRISPE框架", "BROKE框架"]
 categories: ["AI"]
 ---
 
-[//]: # (正文开始)
+> 开始之前，记得免费领取火山引擎 DeekSeek  R1 满血版，速度极快。
+>  [点此立即领取](https://www.volcengine.com/experience/ark?utm_term=202502dsinvite&ac=DSASUQY5&rc=ZEWLRBY9)
+
 
 ## 核心框架解析（截至2025年2月）
 
