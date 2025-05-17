@@ -15,15 +15,21 @@ export const UI: Ui = {
   internalNavs: [
     {
       path: '/',
-      title: '首页',
+      title: 'Home/首页',
       displayMode: 'alwaysText',
-      text: ' Home/首页',
+      text: ' Home',
+    },
+    {
+      path: '/news',
+      title: 'AI News/AI 新闻',
+      displayMode: 'alwaysText',
+      text: 'AI News',
     },
     {
       path: '/blog',
-      title: 'Blog',
+      title: 'Blog/博客',
       displayMode: 'alwaysText',
-      text: 'Blog/博客',
+      text: 'Blog',
     },
 
     // {
@@ -32,23 +38,29 @@ export const UI: Ui = {
     //   displayMode: 'alwaysText',
     //   text: 'Projects',
     // },
-    {
-      path: '/photographs',
-      title: 'Photographs',
-      displayMode: 'alwaysText',
-      text: 'Photographs/摄影',
-    },
-    {
-      path: '/calligraphy',
-      title: 'Calligraphy/手写书法作品',
-      displayMode: 'alwaysText',
-      text: 'Calligraphy/手写',
-    },
+    // {
+    //   path: '/photographs',
+    //   title: 'Photographs/摄影作品',
+    //   displayMode: 'alwaysText',
+    //   text: 'Photographs',
+    // },
+    // {
+    //   path: '/calligraphy',
+    //   title: 'Calligraphy/手写书法作品',
+    //   displayMode: 'alwaysText',
+    //   text: 'Calligraphy',
+    // },
     {
       path: '/friends',
       title: 'Friends/友情链接',
       displayMode: 'alwaysText',
-      text: 'Friends/友情链接',
+      text: 'Friends',
+    },
+    {
+      path: '/about',
+      title: 'About Me/关于我',
+      displayMode: 'alwaysText',
+      text: 'About Me',
     },
   ],
   socialLinks: [

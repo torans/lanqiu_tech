@@ -1,16 +1,14 @@
 ---
-title: '兰秋十六'
-subtitle: ''
-description: ''
+title: AI News
+description: 每日分享全球最新的AI资讯
+subtitle: SHARE THE DAILY AI NEWS
 bgType: plum
-toc: false
-ogImage: false
+toc: true
+ogImage: true
 ---
 
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
-import RenderPost from '~/components/views/RenderPost.astro'
-import LogoButton from '~/components/widgets/LogoButton.astro'
 import ListView from '~/components/views/ListView.astro'
 
 <BaseLayout
@@ -21,6 +19,5 @@ import ListView from '~/components/views/ListView.astro'
 >
   <StandardLayout title={frontmatter.title} subtitle={frontmatter.subtitle}>
     <ListView slot="list" pageToc={frontmatter.toc} collectionType="news" />
-
   </StandardLayout>
 </BaseLayout>

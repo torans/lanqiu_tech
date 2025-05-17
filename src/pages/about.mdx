@@ -11,7 +11,6 @@ import BaseLayout from '~/layouts/BaseLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
 import RenderPost from '~/components/views/RenderPost.astro'
 import LogoButton from '~/components/widgets/LogoButton.astro'
-import ListView from '~/components/views/ListView.astro'
 
 <BaseLayout
   title={frontmatter.title}
@@ -20,7 +19,11 @@ import ListView from '~/components/views/ListView.astro'
   ogImage={frontmatter.ogImage}
 >
   <StandardLayout title={frontmatter.title} subtitle={frontmatter.subtitle}>
-    <ListView slot="list" pageToc={frontmatter.toc} collectionType="news" />
-
+    <RenderPost
+      slot="article"
+      pageToc={frontmatter.toc}
+      collectionType="about"
+      slug="index"
+    />
   </StandardLayout>
 </BaseLayout>
