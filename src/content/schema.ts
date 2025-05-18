@@ -1,4 +1,10 @@
 import { z } from 'astro:content'
+import { notionLoader } from 'notion-astro-loader'
+import {
+  notionPageSchema,
+  propertySchema,
+  transformedPropertySchema,
+} from 'notion-astro-loader/schemas'
 
 /* Pages*/
 export const pageSchema = z.object({
@@ -176,6 +182,17 @@ const FriendGroupsSchema = z.record(z.array(friendSchema))
 export const friendsSchema = z.object({
   friends: FriendGroupsSchema,
 })
+
+const NotionSchema = notionPageSchema({
+  properties: z.object({
+    Name: transformedPropertySchema.title,
+    created: propertySchema.created_time.optional(),
+    tags: transformedPropertySchema.multi_select,
+    slug: transformedPropertySchema.rich_text,
+  }),
+})
+
+export type NotionSchema = z.infer<typeof NotionSchema>
 
 export type FriendSchema = z.infer<typeof friendSchema>
 export type FriendGroupsSchema = z.infer<typeof FriendGroupsSchema>

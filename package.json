@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "astro": "^5.1.6",
+    "notion-astro-loader": "^0.4.0",
     "nprogress": "^0.2.0"
   },
   "devDependencies": {

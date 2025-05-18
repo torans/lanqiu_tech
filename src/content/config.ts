@@ -3,6 +3,13 @@ import { defineCollection } from 'astro:content'
 import { feedLoader } from '@ascorbic/feed-loader'
 import { githubReleasesLoader } from 'astro-loader-github-releases'
 import { githubPrsLoader } from 'astro-loader-github-prs'
+import { notionLoader } from 'notion-astro-loader'
+import {
+  notionPageSchema,
+  propertySchema,
+  transformedPropertySchema,
+} from 'notion-astro-loader/schemas'
+
 import {
   pageSchema,
   postSchema,
@@ -94,6 +101,25 @@ const news = defineCollection({
 const friends = defineCollection({
   type: 'data',
   schema: friendsSchema,
+})
+
+const notion = defineCollection({
+  loader: notionLoader({
+    auth: import.meta.env.NOTION_TOKEN,
+    database_id: import.meta.env.NOTION_DB_ID,
+    filter: {
+      property: 'published',
+      checkbox: { equals: true },
+    },
+    schema: notionPageSchema({
+      properties: z.object({
+        Name: transformedPropertySchema.title,
+        created: propertySchema.created_time.optional(),
+        tags: transformedPropertySchema.multi_select,
+        slug: transformedPropertySchema.rich_text,
+      }),
+    }),
+  }),
 })
 
 export const collections = {

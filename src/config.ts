@@ -3,10 +3,9 @@ import type { Site, Ui, Features } from './types'
 export const SITE: Site = {
   website: 'https://lanqiu.tech/',
   base: '/',
-  title: '兰秋十六',
-  description:
-    '兰秋十六的个人博客，这里是我分享技术开发、学习心得与生活点滴的温暖角落。从代码的世界到生活的细微之处，我用文字与图片记录每一个灵感的闪现、每一次成长的喜悦。',
-  author: 'Jran',
+  title: '兰秋AI',
+  description: '分享 AI 相关的新闻、智能体、AI自动化工作流等前沿内容。',
+  author: '兰秋十六',
   lang: ' cn',
   ogLocale: 'zh_CN',
 }
@@ -21,7 +20,7 @@ export const UI: Ui = {
     },
     {
       path: '/news',
-      title: 'AI News/AI 新闻',
+      title: 'AI News/AI新闻',
       displayMode: 'alwaysText',
       text: 'AI News',
     },
@@ -72,7 +71,7 @@ export const UI: Ui = {
     },
     {
       link: 'https://x.com/jran41134074',
-      title: 'Astro on Twitter',
+      title: '兰秋 on Twitter',
       displayMode: 'alwaysIcon',
       icon: 'i-ri-twitter-x-fill',
     },
@@ -90,7 +89,9 @@ export const UI: Ui = {
   },
   tabbedLayoutTabs: [
     { title: 'Changelog', path: '/changelog' },
-    { title: 'AstroBlog', path: '/feeds' },
+    { title: '兰秋AI RSS', path: '/feeds' },
+    { title: '兰秋AI', path: '/news' },
+    { title: '兰秋博客', path: '/blog' },
     { title: 'AstroStreams', path: '/streams' },
   ],
   groupView: {
@@ -124,15 +125,15 @@ export const FEATURES: Features = {
   share: [
     true,
     {
-      twitter: [true, '@ste7lin'],
-      bluesky: [true, '@ste7lin.bsky.social'],
+      twitter: [true, '@jran41134074'],
+      bluesky: [true, '@lanqiu-tech.bsky.social'],
       mastodon: false,
       facebook: false,
       pinterest: false,
       reddit: false,
-      telegram: false,
+      telegram: '@jan2023',
       whatsapp: false,
-      email: false,
+      email: 'jran@lanqiu.tech',
     },
   ],
   toc: [
