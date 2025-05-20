@@ -103,25 +103,6 @@ const friends = defineCollection({
   schema: friendsSchema,
 })
 
-const notion = defineCollection({
-  loader: notionLoader({
-    auth: import.meta.env.NOTION_TOKEN,
-    database_id: import.meta.env.NOTION_DB_ID,
-    filter: {
-      property: 'published',
-      checkbox: { equals: true },
-    },
-    schema: notionPageSchema({
-      properties: z.object({
-        Name: transformedPropertySchema.title,
-        created: propertySchema.created_time.optional(),
-        tags: transformedPropertySchema.multi_select,
-        slug: transformedPropertySchema.rich_text,
-      }),
-    }),
-  }),
-})
-
 export const collections = {
   pages,
   blog,

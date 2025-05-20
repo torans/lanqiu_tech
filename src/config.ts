@@ -65,13 +65,13 @@ export const UI: Ui = {
   socialLinks: [
     {
       link: 'https://github.com/torans',
-      title: 'Jran on Github',
+      title: '兰秋十六 on Github',
       displayMode: 'alwaysIcon',
       icon: 'i-uil-github-alt',
     },
     {
       link: 'https://x.com/jran41134074',
-      title: '兰秋 on Twitter',
+      title: '兰秋十六 on Twitter',
       displayMode: 'alwaysIcon',
       icon: 'i-ri-twitter-x-fill',
     },
