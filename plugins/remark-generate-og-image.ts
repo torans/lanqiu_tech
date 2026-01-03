@@ -11,8 +11,10 @@ import { FEATURES } from '../src/config'
 
 import type { SatoriOptions } from 'satori'
 import type { BgType } from '../src/types'
+import { visit } from 'unist-util-visit'
 
 const Inter = readFileSync('plugins/og-template/Inter-Regular-24pt.ttf')
+const LXGW = readFileSync('plugins/og-template/lxgw.ttf')
 
 const satoriOptions: SatoriOptions = {
   // debug: true,
@@ -23,7 +25,7 @@ const satoriOptions: SatoriOptions = {
       name: 'Inter',
       weight: 400,
       style: 'normal',
-      data: Inter,
+      data: LXGW,
     },
   ],
 }
@@ -76,7 +78,30 @@ function remarkGenerateOgImage() {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  return async (_tree, file) => {
+  return async (tree, file) => {
+    // extract first image and description if possible
+    let firstImage: string | undefined
+    let firstQuote: string | undefined
+
+    visit(tree, 'image', (node: any) => {
+      if (!firstImage) firstImage = node.url
+    })
+
+    visit(tree, 'blockquote', (node: any) => {
+      if (!firstQuote) {
+        visit(node, 'text', (textNode: any) => {
+          if (!firstQuote) firstQuote = textNode.value
+        })
+      }
+    })
+
+    if (firstImage) {
+      file.data.astro.frontmatter.ogImage = firstImage
+    }
+    if (firstQuote && !file.data.astro.frontmatter.description) {
+      file.data.astro.frontmatter.description = firstQuote.slice(0, 160)
+    }
+
     // regenerate fallback
     if (!checkFileExistsInDir('public/og-images', 'og-image.png')) {
       await generateOgImage(
@@ -127,7 +152,6 @@ function remarkGenerateOgImage() {
       console.warn(
         `${chalk.black(getCurrentFormattedTime())} ${chalk.yellow(`[WARN] The '${ogImage}' specified in '${file.path}' was not found.`)}\n  ${chalk.bold('Hint:')} See ${chalk.cyan.underline('https://astro-antfustyle-theme.vercel.app/blog/about-open-graph-images/#configuring-og-images')} for more information on og image.`
       )
-      return
     }
 
     // get bgType

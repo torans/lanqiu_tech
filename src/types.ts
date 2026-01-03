@@ -376,3 +376,47 @@ export interface GitHubView {
    */
   mainLogoOverrides: [RepoWithOwner | RegExp, Url | Icon][]
 }
+
+/* Features */
+export type BgType = 'plum' | 'dot' | 'rose' | 'particle'
+
+export type ShareConfig = {
+  twitter?: [boolean, string]
+  bluesky?: [boolean, string]
+  mastodon?: boolean
+  facebook?: boolean
+  pinterest?: boolean
+  reddit?: boolean
+  telegram?: string
+  whatsapp?: boolean
+  email?: string
+}
+
+export interface TocConfig {
+  minHeadingLevel: number
+  maxHeadingLevel: number
+  displayPosition: 'left' | 'right'
+  displayMode: 'hover' | 'always'
+}
+
+export interface OgImageConfig {
+  authorOrBrand: string
+  fallbackTitle: string
+  fallbackBgType: BgType
+}
+
+export interface Features {
+  share: [boolean, ShareConfig]
+  toc: [boolean, TocConfig]
+  ogImage: [boolean, OgImageConfig]
+  slideEnterAnim: [boolean, { enterStep: number }]
+}
+
+export interface Ui {
+  internalNavs: InternalNav[]
+  socialLinks: SocialLink[]
+  navBarLayout: NavBarLayout
+  tabbedLayoutTabs: Tabs
+  groupView: GroupView
+  githubView: GitHubView
+}

@@ -4,7 +4,7 @@ import type { ShareConfig } from '~/types'
 
 interface ShareLink {
   baseUrl: string
-  formatUrl: (postUrl: URL, config?: [boolean, string?]) => string
+  formatUrl: (postUrl: URL, config?: any) => string
   label: string
   title: string
 }
@@ -23,7 +23,7 @@ const SHARE_LINKS: Record<string, ShareLink> = {
       `${SHARE_LINKS.twitter.baseUrl}${encodeURIComponent(
         `Reading ${cfg?.[1] ? `${cfg[1]}'s ` : ''}${url}\n\nI think...`
       )}`,
-    label: 'twitter',
+    label: 'X',
     title: 'Tweet this post',
   },
   bluesky: {
@@ -32,7 +32,7 @@ const SHARE_LINKS: Record<string, ShareLink> = {
       `${SHARE_LINKS.bluesky.baseUrl}${encodeURIComponent(
         `Reading ${cfg?.[1] ? `${cfg[1]}'s ` : ''}${url}. I think...`
       )}`,
-    label: 'bluesky',
+    label: 'Bsky',
     title: 'Share this post on Bluesky',
   },
   mastodon: {
@@ -41,43 +41,43 @@ const SHARE_LINKS: Record<string, ShareLink> = {
       `${SHARE_LINKS.mastodon.baseUrl}${encodeURIComponent(
         `Reading ${cfg?.[1] ? `${cfg[1]}'s ` : ''}${url}\n\nI think...`
       )}`,
-    label: 'mastodon',
+    label: 'Mastodon',
     title: 'Share this post on Mastodon',
   },
   facebook: {
     baseUrl: 'https://www.facebook.com/sharer.php?u=',
     formatUrl: (url) => `${SHARE_LINKS.facebook.baseUrl}${url}`,
-    label: 'facebook',
+    label: 'Facebook',
     title: 'Share this post on Facebook',
   },
   pinterest: {
     baseUrl: 'https://pinterest.com/pin/create/button/?url=',
     formatUrl: (url) => `${SHARE_LINKS.pinterest.baseUrl}${url}`,
-    label: 'pinterest',
+    label: 'Pinterest',
     title: 'Share this post on Pinterest',
   },
   reddit: {
     baseUrl: 'https://www.reddit.com/submit?url=',
     formatUrl: (url) => `${SHARE_LINKS.reddit.baseUrl}${url}`,
-    label: 'reddit',
+    label: 'Reddit',
     title: 'Share this post on Reddit',
   },
   telegram: {
     baseUrl: 'https://t.me/share/url?url=',
     formatUrl: (url) => `${SHARE_LINKS.telegram.baseUrl}${url}`,
-    label: 'telegram',
+    label: 'Telegram',
     title: 'Share this post via Telegram',
   },
   whatsapp: {
     baseUrl: 'https://wa.me/?text=',
     formatUrl: (url) => `${SHARE_LINKS.whatsapp.baseUrl}${url}`,
-    label: 'whatsapp',
+    label: 'WhatsApp',
     title: 'Share this post via WhatsApp',
   },
   email: {
     baseUrl: 'mailto:?subject=See%20this%20post&body=',
     formatUrl: (url) => `${SHARE_LINKS.email.baseUrl}${url}`,
-    label: 'email',
+    label: 'Email',
     title: 'Share this post via email',
   },
 }

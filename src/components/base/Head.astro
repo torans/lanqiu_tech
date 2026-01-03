@@ -31,14 +31,18 @@ const generatedOgImage = checkFileExistsInDir(
 const assignedOgImage =
   ogImage &&
   ogImage !== true &&
-  checkFileExistsInDir('public/og-images', ogImage)
-    ? getUrl('og-images', ogImage)
-    : undefined
+  (ogImage.startsWith('http')
+    ? ogImage
+    : checkFileExistsInDir('public/og-images', ogImage)
+      ? getUrl('og-images', ogImage)
+      : undefined)
 
-const ogImageURL = new URL(
-  assignedOgImage || generatedOgImage || getUrl('og-images', 'og-image.png'),
-  Astro.url
-).href
+const ogImageURL = assignedOgImage
+  ? assignedOgImage.startsWith('http')
+    ? assignedOgImage
+    : new URL(assignedOgImage, Astro.url).href
+  : new URL(generatedOgImage || getUrl('og-images', 'og-image.png'), Astro.url)
+      .href
 
 // https://jsonld.com/blog-post/
 const blogPostingData = {

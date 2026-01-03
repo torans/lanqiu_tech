@@ -6,5 +6,6 @@
       "~/*": ["./src/*"]
     }
   },
+  "include": ["src", "plugins", "astro.config.ts"],
   "exclude": ["dist", "node_modules", ".local"]
 }
