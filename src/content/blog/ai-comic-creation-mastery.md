@@ -5,7 +5,6 @@ pubDate: "2026-01-04 00:51:00"
 tags: ["AI漫画", "NotebookLM", "Gemini", "工作流"]
 categories: ["AI实践"]
 ---
-# 漫画创作进入“自动驾驶”时代：基于 NotebookLM + Gemini 的高效二创工作流
 
 > **摘要**：传统的漫画创作往往受限于绘画技巧 and 漫长的分镜规划。本文将揭秘一套基于 Google NotebookLM、Gemini 3.0、Nano Banana Pro 的全新二创流水线。通过将专业论文、技术文档转化为极具视觉冲击力的漫画，我们不仅能实现信息的视觉化降维，更能通过 AI 保持分镜与角色的高度一致性。
 
