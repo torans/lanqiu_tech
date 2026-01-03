@@ -18,7 +18,7 @@ export const ogImageMarkup = (
 
   return html`<div
     tw="relative flex justify-center items-center w-full h-full"
-    style="font-family: 'Inter'"
+    style="font-family: 'LXGW'"
   >
     <img
       tw="absolute inset-0 w-full h-full"
