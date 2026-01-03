@@ -49,7 +49,7 @@ categories: ["AI实践"]
 这是最关键的一步。传统的 AI 绘图最怕“画着画着换了人”。
 
 *   **操作**：使用具有强大空间理解能力的 **Nano Banana Pro** 直接生成 3:4 的竖屏分镜。
-*   **技巧**：在 Prompt 中锁定人物形象（如：Sleek Robot with glowing brain）和画风（如：Pixar-style 3D cartoon）。
+*   **技巧**：在 Prompt 中锁定人物形象（如：Sleek Robot with glowing brain） and 画风（如：Pixar-style 3D cartoon）。
 
 ---
 
@@ -57,19 +57,13 @@ categories: ["AI实践"]
 
 下面，我们来看看基于上述工作流，如何将一份抽象的 AI 手册转化为生动的漫画。
 
-````carousel
-![痛点篇：裸奔的学徒](../attachments/comic_page_1_naked_apprentice_1767410213154.png)
-<!-- slide -->
-![概念篇：大师工具箱](../attachments/comic_page_2_master_toolbox_1767410230575.png)
-<!-- slide -->
-![解剖篇：SKILL.md 的秘密](../attachments/comic_page_3_skill_md_secret_1767410258140.png)
-<!-- slide -->
-![实战篇：深度协同与审计](../attachments/comic_page_4_collaboration_audit_1767410280365.png)
-<!-- slide -->
-![生态篇：一把钥匙开万把锁](../attachments/comic_page_5_universal_key_1767410302460.png)
-<!-- slide -->
-![未来篇：知识资产化](../attachments/comic_page_6_future_city_1767410318152.png)
-````
+![痛点篇：裸奔的学徒](../attachments/comic-1.jpg)
+![概念篇：大师工具箱](../attachments/comic-2.jpg)
+![解剖篇：SKILL.md 的秘密](../attachments/comic-3.jpg)
+![实战篇：深度协同与审计](../attachments/comic-4.jpg)
+![生态篇：一把钥匙开万把锁](../attachments/comic-5.jpg)
+![未来篇：知识资产化](../attachments/comic-6.jpg)
+
 > [!NOTE]
 > 以上图片由 AI 直接从论文原文生成。你会发现，虽然角色形态保持了高度统一（可爱的发光大脑机器人），但场景却随着逻辑的深入从“混乱工地”演变成了“未来智慧城市”。
 
