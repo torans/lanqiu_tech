@@ -1,4 +1,5 @@
 import { glob } from 'astro/loaders'
+import { z } from 'zod'
 import { defineCollection } from 'astro:content'
 import { feedLoader } from '@ascorbic/feed-loader'
 import { githubReleasesLoader } from 'astro-loader-github-releases'
