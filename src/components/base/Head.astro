@@ -37,12 +37,15 @@ const assignedOgImage =
       ? getUrl('og-images', ogImage)
       : undefined)
 
-const ogImageURL = assignedOgImage
-  ? assignedOgImage.startsWith('http')
-    ? assignedOgImage
-    : new URL(assignedOgImage, Astro.url).href
-  : new URL(generatedOgImage || getUrl('og-images', 'og-image.png'), Astro.url)
-      .href
+const ogImageURL =
+  (assignedOgImage
+    ? assignedOgImage.startsWith('http')
+      ? assignedOgImage
+      : new URL(assignedOgImage, Astro.url).href
+    : new URL(
+        generatedOgImage || getUrl('og-images', 'og-image.png'),
+        Astro.url
+      ).href) + '?v=2'
 
 // https://jsonld.com/blog-post/
 const blogPostingData = {
