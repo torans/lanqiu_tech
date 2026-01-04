@@ -22,7 +22,7 @@ const satoriOptions: SatoriOptions = {
   height: 630,
   fonts: [
     {
-      name: 'LXGW',
+      name: 'Inter',
       weight: 400,
       style: 'normal',
       data: LXGW,
