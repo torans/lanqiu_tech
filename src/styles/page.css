@@ -22,3 +22,27 @@
 .github-item-content li {
   --uno: 'lt-sm:text-sm';
 }
+
+/* WeChat Follow Banner */
+.wechat-follow-banner {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.wechat-follow-banner img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .wechat-follow-banner {
+    margin: 3rem auto;
+  }
+
+  .wechat-follow-banner img {
+    max-width: 600px;
+  }
+}

@@ -11,6 +11,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
 import RenderPost from '~/components/views/RenderPost.astro'
 import LogoButton from '~/components/widgets/LogoButton.astro'
+import WechatQRFloat from '~/components/widgets/WechatQRFloat.astro'
 
 <BaseLayout
   title={frontmatter.title}
@@ -26,4 +27,5 @@ import LogoButton from '~/components/widgets/LogoButton.astro'
       slug="index"
     />
   </StandardLayout>
+  <WechatQRFloat />
 </BaseLayout>

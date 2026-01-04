@@ -9,7 +9,7 @@ export function formatDate(d: Date | string, showYear = true) {
   if (!showYear /* || date.year() === dayjs().year() */)
     return date.format('MMM D')
 
-  return date.format('MMM D, YYYY')
+  return date.format('YYYY-MM-DD HH:mm:ss')
 }
 
 /**

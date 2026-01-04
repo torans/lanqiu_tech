@@ -1,0 +1,99 @@
+---
+// Floating WeChat QR Code Widget for Desktop
+---
+
+<div class="wechat-qr-float">
+  <div class="qr-container">
+    <p class="qr-text">兰秋说 AI</p>
+    <img
+      src="/images/writtens/wechat-qrcode.jpg"
+      alt="兰秋十六微信公众号二维码"
+    />
+    <p class="qr-hint">获取公众号最新内容</p>
+  </div>
+</div>
+
+<style>
+  .wechat-qr-float {
+    position: fixed;
+    right: 2rem;
+    top: 180px;
+    z-index: 100;
+    display: none;
+  }
+
+  /* Only show on desktop (>= 1280px) */
+  @media (min-width: 1280px) {
+    .wechat-qr-float {
+      display: block;
+    }
+  }
+
+  .qr-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .dark .qr-container {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .qr-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .qr-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.5px;
+  }
+
+  .dark .qr-text {
+    color: #e5e5e5;
+  }
+
+  .qr-container img {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .qr-hint {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 0.75rem 0 0 0;
+    opacity: 0.8;
+  }
+
+  .dark .qr-hint {
+    color: #999;
+  }
+
+  /* Smooth entrance animation */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .wechat-qr-float {
+    animation: fadeInRight 0.6s ease-out;
+  }
+</style>

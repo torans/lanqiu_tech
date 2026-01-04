@@ -16,19 +16,19 @@ export const UI: Ui = {
       path: '/',
       title: 'Home/首页',
       displayMode: 'alwaysText',
-      text: ' Home',
+      text: '首页',
     },
     {
       path: '/news',
       title: 'AI News/AI新闻',
       displayMode: 'alwaysText',
-      text: 'AI News',
+      text: 'AI新闻',
     },
     {
       path: '/blog',
       title: 'Blog/博客',
       displayMode: 'alwaysText',
-      text: 'Blog',
+      text: '博客',
     },
 
     // {
@@ -53,13 +53,13 @@ export const UI: Ui = {
       path: '/friends',
       title: 'Friends/友情链接',
       displayMode: 'alwaysText',
-      text: 'Friends',
+      text: '友情链接',
     },
     {
       path: '/about',
       title: 'About Me/关于我',
       displayMode: 'alwaysText',
-      text: 'About Me',
+      text: '关于兰秋',
     },
   ],
   socialLinks: [

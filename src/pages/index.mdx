@@ -1,7 +1,7 @@
 ---
-title: '兰秋十六'
+title: '兰秋说AI - AI技术分享与全栈开发'
 subtitle: ''
-description: ''
+description: '专注于AI技术应用、自动化工作流与全栈开发。分享AI Agent、大语言模型、Web3等前沿技术内容。'
 bgType: plum
 toc: false
 ogImage: false
@@ -9,9 +9,19 @@ ogImage: false
 
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
-import RenderPost from '~/components/views/RenderPost.astro'
-import LogoButton from '~/components/widgets/LogoButton.astro'
 import ListView from '~/components/views/ListView.astro'
+import WechatQRFloat from '~/components/widgets/WechatQRFloat.astro'
+import { getCollection } from 'astro:content'
+
+export const blogPosts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5)
+
+export const newsItems = (await getCollection('news'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5)
 
 <BaseLayout
   title={frontmatter.title}
@@ -19,8 +29,110 @@ import ListView from '~/components/views/ListView.astro'
   bgType={frontmatter.bgType}
   ogImage={frontmatter.ogImage}
 >
-  <StandardLayout title={frontmatter.title} subtitle={frontmatter.subtitle}>
-    <ListView slot="list" pageToc={frontmatter.toc} collectionType="news" />
+  <StandardLayout>
+    <div slot="wide" class="px-4 mt-8 max-w-65ch mx-auto">
+      {/* Header */}
+      <div class="slide-enter-content">
+        <h1 class="text-3xl font-bold mb-4">
+          兰秋说 AI
+        </h1>
+        <p class="text-lg op-60 mb-6 leading-relaxed">
+          专注于 AI 技术应用、自动化工作流与全栈开发。<br />
+          分享 AI Agent、大语言模型、Web3 等前沿技术内容。
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-16">
+          <a href="/blog" class="flex items-center gap-2 px-3 py-1.5 rounded bg-gray/5 hover:bg-gray/10 transition-colors text-current no-underline">
+            <span class="i-ri-article-line"/>
+            <span>博客</span>
+          </a>
+          <a href="/news" class="flex items-center gap-2 px-3 py-1.5 rounded bg-gray/5 hover:bg-gray/10 transition-colors text-current no-underline">
+            <span class="i-ri-newspaper-line"/>
+            <span>AI 资讯</span>
+          </a>
+          <a href="/about" class="flex items-center gap-2 px-3 py-1.5 rounded bg-gray/5 hover:bg-gray/10 transition-colors text-current no-underline">
+            <span class="i-ri-user-line"/>
+            <span>关于我</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Featured Lists - Minimalist */}
+      <div class="slide-enter-content" style="--enter-stage: 1;">
+        <h2 class="text-xl font-bold mb-4 opacity-90">核心主题</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+          <a href="/blog/tag/agent" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="i-carbon-bot text-xl op-70 group-hover:op-100 transition-opacity"/>
+              <span class="font-bold op-80 group-hover:op-100">AI Agent 开发</span>
+            </div>
+            <p class="text-sm op-50">构建智能化的自动化工作流，提升生产力</p>
+          </a>
+          <a href="/blog/tag/llm" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="i-carbon-brain-circuit text-xl op-70 group-hover:op-100 transition-opacity"/>
+              <span class="font-bold op-80 group-hover:op-100">大语言模型应用</span>
+            </div>
+            <p class="text-sm op-50">深度挖掘 GPT、Claude、DeepSeek 实战技巧</p>
+          </a>
+          <a href="/blog/tag/tools" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="i-carbon-flash text-xl op-70 group-hover:op-100 transition-opacity"/>
+              <span class="font-bold op-80 group-hover:op-100">效率工具开发</span>
+            </div>
+            <p class="text-sm op-50">打造自动化系统，让技术真正为你服务</p>
+          </a>
+          <a href="/blog/tag/web3" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="i-carbon-network-3 text-xl op-70 group-hover:op-100 transition-opacity"/>
+              <span class="font-bold op-80 group-hover:op-100">Web3 & 全栈开发</span>
+            </div>
+            <p class="text-sm op-50">探索去中心化应用与现代化开发技术</p>
+          </a>
+        </div>
+      </div>
+
+      {/* Latest Posts - Simple List */}
+      <div class="slide-enter-content" style="--enter-stage: 2;">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold opacity-90">最新文章</h2>
+          <a href="/blog" class="text-sm op-50 hover:op-100 transition-opacity no-underline">View all →</a>
+        </div>
+        <div class="flex flex-col gap-3 mb-12">
+          {blogPosts.map(post => (
+            <a href={`/blog/${post.slug}`} class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 group no-underline text-current">
+              <span class="text-sm op-40 font-mono whitespace-nowrap">
+                {post.data.pubDate.toISOString().split('T')[0]}
+              </span>
+              <span class="op-80 group-hover:op-100 group-hover:underline decoration-dashed underline-offset-4 transition-all">
+                {post.data.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* AI News - Compact List */}
+      <div class="slide-enter-content" style="--enter-stage: 3;">
+         <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold opacity-90">AI 资讯</h2>
+          <a href="/news" class="text-sm op-50 hover:op-100 transition-opacity no-underline">View all →</a>
+        </div>
+         <div class="flex flex-col gap-3 mb-12">
+          {newsItems.map(post => (
+            <a href={`/news/${post.slug}`} class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 group no-underline text-current">
+              <span class="text-sm op-40 font-mono whitespace-nowrap">
+                {post.data.pubDate.toISOString().split('T')[0]}
+              </span>
+              <span class="op-80 group-hover:op-100 group-hover:underline decoration-dashed underline-offset-4 transition-all">
+                {post.data.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
 
   </StandardLayout>
+  <WechatQRFloat />
 </BaseLayout>

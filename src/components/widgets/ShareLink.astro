@@ -18,67 +18,67 @@ const postUrl = Astro.url
 
 const SHARE_LINKS: Record<string, ShareLink> = {
   twitter: {
-    baseUrl: 'https://twitter.com/intent/tweet?text=',
+    baseUrl: 'https://x.com/intent/tweet?text=',
     formatUrl: (url, cfg) =>
       `${SHARE_LINKS.twitter.baseUrl}${encodeURIComponent(
-        `Reading ${cfg?.[1] ? `${cfg[1]}'s ` : ''}${url}\n\nI think...`
+        `读了 ${cfg?.[1] ? `${cfg[1]}后 ` : ''}${url}\n\n我认为...`
       )}`,
     label: 'X',
-    title: 'Tweet this post',
+    title: '分享文章到 X（推特）',
   },
   bluesky: {
     baseUrl: 'https://bsky.app/intent/compose?text=',
     formatUrl: (url, cfg) =>
       `${SHARE_LINKS.bluesky.baseUrl}${encodeURIComponent(
-        `Reading ${cfg?.[1] ? `${cfg[1]}'s ` : ''}${url}. I think...`
+        `读了 ${cfg?.[1] ? `${cfg[1]}后 ` : ''}${url}. 我认为...`
       )}`,
     label: 'Bsky',
-    title: 'Share this post on Bluesky',
+    title: '分享文章到 Bluesky',
   },
   mastodon: {
     baseUrl: 'https://elk.zone/intent/post?text=',
     formatUrl: (url, cfg) =>
       `${SHARE_LINKS.mastodon.baseUrl}${encodeURIComponent(
-        `Reading ${cfg?.[1] ? `${cfg[1]}'s ` : ''}${url}\n\nI think...`
+        `读了 ${cfg?.[1] ? `${cfg[1]}后 ` : ''}${url}\n\n我认为...`
       )}`,
     label: 'Mastodon',
-    title: 'Share this post on Mastodon',
+    title: '分享文章到 Mastodon',
   },
   facebook: {
     baseUrl: 'https://www.facebook.com/sharer.php?u=',
     formatUrl: (url) => `${SHARE_LINKS.facebook.baseUrl}${url}`,
     label: 'Facebook',
-    title: 'Share this post on Facebook',
+    title: '分享文章到 Facebook',
   },
   pinterest: {
     baseUrl: 'https://pinterest.com/pin/create/button/?url=',
     formatUrl: (url) => `${SHARE_LINKS.pinterest.baseUrl}${url}`,
     label: 'Pinterest',
-    title: 'Share this post on Pinterest',
+    title: '分享文章到 Pinterest',
   },
   reddit: {
     baseUrl: 'https://www.reddit.com/submit?url=',
     formatUrl: (url) => `${SHARE_LINKS.reddit.baseUrl}${url}`,
     label: 'Reddit',
-    title: 'Share this post on Reddit',
+    title: '分享文章到 Reddit',
   },
   telegram: {
     baseUrl: 'https://t.me/share/url?url=',
     formatUrl: (url) => `${SHARE_LINKS.telegram.baseUrl}${url}`,
     label: 'Telegram',
-    title: 'Share this post via Telegram',
+    title: '分享文章到 Telegram',
   },
   whatsapp: {
     baseUrl: 'https://wa.me/?text=',
     formatUrl: (url) => `${SHARE_LINKS.whatsapp.baseUrl}${url}`,
     label: 'WhatsApp',
-    title: 'Share this post via WhatsApp',
+    title: '分享文章到 WhatsApp',
   },
   email: {
     baseUrl: 'mailto:?subject=See%20this%20post&body=',
     formatUrl: (url) => `${SHARE_LINKS.email.baseUrl}${url}`,
-    label: 'Email',
-    title: 'Share this post via email',
+    label: 'E-mail',
+    title: '分享文章到 E-mail',
   },
 }
 
@@ -95,7 +95,7 @@ const links = Object.entries(config)
 ---
 
 <span class="font-mono op-50">&gt; </span>
-<span class="op-50">share on</span>
+<span class="op-50">分享到：</span>
 {
   links.map((link, idx) => (
     <>

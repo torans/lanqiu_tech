@@ -3,6 +3,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
 import Toc from '~/components/toc/Toc.astro'
 import ShareLink from '~/components/widgets/ShareLink.astro'
+import WechatQRFloat from '~/components/widgets/WechatQRFloat.astro'
 import Warning from '~/components/base/Warning.astro'
 import { formatDate } from '~/utils/datetime'
 import { getFilteredPosts } from '~/utils/post'
@@ -51,10 +52,10 @@ frontmatter to <code>false</code> or remove it to publish the post.`
         frontmatter.pubDate && (
           <p class="mt--6! op-50">
             <time datetime={pubDate}>{formatDate(pubDate)}</time>
-            {minutesRead !== 0 && <span>· {minutesRead} min</span>}
+            {minutesRead !== 0 && <span> 预计耗时 {minutesRead} 分钟阅读</span>}
             {lastModDate && (
               <time datetime={lastModDate}>
-                | Updated: {formatDate(lastModDate)}
+                | 更新: {formatDate(lastModDate)}
               </time>
             )}
           </p>
@@ -65,6 +66,9 @@ frontmatter to <code>false</code> or remove it to publish the post.`
     <Fragment slot="article">
       {Array.isArray(toc) && toc[0] && frontmatter.toc && <Toc {headings} />}
       <Content />
+      <div class="wechat-follow-banner">
+        <img src="/images/wechat-share.png" alt="关注兰秋十六微信公众号" />
+      </div>
     </Fragment>
   </StandardLayout>
   <Fragment slot="share">
@@ -74,4 +78,5 @@ frontmatter to <code>false</code> or remove it to publish the post.`
       )
     }
   </Fragment>
+  <WechatQRFloat />
 </BaseLayout>
