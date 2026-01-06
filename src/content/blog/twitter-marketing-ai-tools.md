@@ -4,10 +4,10 @@ description: "在 Twitter (X) 上，流量是从“发帖”到“互动”的�
 pubDate: 2026-01-06
 tags: ["Twitter", "AI 工具", "数位营销", "自动化"]
 categories: ["工具推荐"]
-coverImage: "../attachments/ai_twitter_marketing_cover.png"
+coverImage: "../attachments/Twitter_Marketing_AI_Tools.png"
 ---
 
-![封面图](../attachments/ai_twitter_marketing_cover.png)
+![封面图](../attachments/Twitter_Marketing_AI_Tools.png)
 
 > **摘要**：在 Twitter (X) 上，流量是从“发帖”到“互动”的暴力美学。本文带你拆解海外顶级大 V 都在用的 AI 运营工具，教你如何利用 AI 实现批量产出、精准引流与自动化变现。"
 
