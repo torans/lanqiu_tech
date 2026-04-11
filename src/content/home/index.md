@@ -48,6 +48,7 @@ I am a middle-aged man with a passion for full-stack web development, skilled in
 
 **推荐应用 / Applications:**
 
+- [Seek AI Tools](https://seekaitools.com/) - AI工具导航，收录10000+ AI工具的中文导航站
 - [兰秋书签](https://nav.lanqiu.tech/)
 - [嗨乐学英语](https://hitalk.metasouls.space/)
 
