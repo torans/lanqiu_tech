@@ -5,8 +5,6 @@ pubDate: 2026-04-11
 tags: ["AI", "AI Agent", "工具对比", "OpenClaw", "Hermes", "效率工具"]
 ---
 
-# Hermes vs OpenClaw：两大 AI Agent 助手深度对比
-
 > 你有没有想过，发一条微信消息就能让 AI 帮你写代码、管文件、操作浏览器？
 
 2026 年，AI Agent 从概念走向落地。在众多项目中，**Hermes** 和 **OpenClaw** 是两个极具代表性的个人 AI 助手项目。它们都能通过你日常使用的聊天应用（微信、Telegram、Discord 等）操控电脑，但设计哲学和使用体验却截然不同。
