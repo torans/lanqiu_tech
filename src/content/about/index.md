@@ -76,7 +76,7 @@ pubDate: 2026-01-04
 
 ## 我的项目
 
-- 🔖 [兰秋书签](https://nav.lanqiu.tech/) - 精选技术资源导航
+- 🤖 [Seek AI Tools](https://seekaitools.com/) - 收录 10000+ AI 工具的中文导航站
 - 🗣️ [嗨乐学英语](https://hitalk.metasouls.space/) - AI 驱动的英语学习平台
 
 ## 联系方式
