@@ -6,7 +6,7 @@ export const SITE: Site = {
   title: '兰秋AI',
   description: '分享 AI 相关的新闻、智能体、AI自动化工作流等前沿内容。',
   author: '兰秋十六',
-  lang: ' cn',
+  lang: 'zh-CN',
   ogLocale: 'zh_CN',
 }
 

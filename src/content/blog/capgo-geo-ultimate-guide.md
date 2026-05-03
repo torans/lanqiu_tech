@@ -2,6 +2,7 @@
 title: 'GEO 终极指南笔记：GEO = SEO + RAG，AI 搜索时代的不要错过的落地实操'
 description: '从 CapGo 团队发布的最新 GEO 终极指南出发，拆解 GEO 的核心公式、程序化 SEO 的 7 大优势、RAG 优化实操方法，以及程序化 GEO 的 7 步落地路径。'
 pubDate: 2026-05-04
+lastModDate: 2026-05-04
 tags: ['GEO', 'SEO', 'RAG', 'AI 搜索', '程序化 SEO', 'CapGo']
 toc: true
 ---

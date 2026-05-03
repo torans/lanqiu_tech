@@ -1,16 +1,16 @@
 ---
 title: "关于兰秋十六 - AI 技术博主 | 全栈开发者"
-description: "兰秋十六（Jran），专注于 AI 技术分享、全栈开发与自动化工作流。分享 AI Agent、大语言模型应用、Web3 开发等前沿技术内容。关注微信公众号「兰秋说AI」获取最新技术动态。"
-pubDate: 2026-01-04
+description: "兰秋十六（Jran），专注于 AI 技术分享、GEO 搜索引擎优化、AI Agent 开发与全栈开发。分享 GEO、Agent、MCP、LLM 等前沿技术内容。关注微信公众号「兰秋说AI」获取最新技术动态。"
+pubDate: 2026-05-04
 ---
 
 我是**兰秋十六**（Jran），一名专注于 **AI 技术应用**和**全栈开发**的技术博主。在这个 AI 爆发的时代，我致力于探索和分享：
 
-- 🤖 **AI Agent 开发**：构建智能化的自动化工作流
-- 🧠 **大语言模型应用**：深度挖掘 GPT、Claude、DeepSeek 等模型的实战技巧
-- ⚡ **效率工具开发**：打造提升 10 倍生产力的自动化系统
-- 🌐 **Web3 & 区块链**：探索去中心化应用的技术实现
-- 📱 **全栈开发**：从前端到后端，从移动端到云端的完整解决方案
+- 🌐 **GEO & AI 搜索优化**：GEO + SEO + RAG 实战，抢占 AI 搜索时代的内容红利
+- 🤖 **AI Agent 开发**：构建智能化的自动化工作流与 AI 助手
+- 🔗 **MCP & AI 工具链**：用 Model Context Protocol 打通 AI 与工具生态
+- 🧠 **LLM 实战**：GPT、Claude、DeepSeek 等模型的深度应用
+- 📱 **全栈开发**：从前端到后端的完整解决方案，Konva、React、Astro 实战
 
 ## 我的使命
 
@@ -23,42 +23,13 @@ pubDate: 2026-01-04
 - 建立自己的 AI 技能库（Skills）
 - 实现从"工具使用者"到"技能开发者"的跃迁
 
-## 技术栈
-
-<div slot="head" class="flex flex-wrap justify-start items-center gap-2">
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">AI & LLM</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">Python</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">Node.js</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">React/Vue</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">PHP</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">Web3/Solidity</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">Kubernetes</p>
-    </a>
-    <a class="btn-black" href=''>
-      <p class="inline-block my-0! ml-1.5">Flutter</p>
-    </a>
-</div>
-
 ## 内容方向
 
 ### 📝 博客文章
-- AI 技术深度解析
-- 自动化工作流实战教程
-- 全栈开发最佳实践
-- Web3 应用开发指南
+- GEO & AI 搜索优化实战
+- AI Agent 开发与 MCP 协议深度解析
+- LLM 应用与 Prompt 工程最佳实践
+- 全栈开发踩坑实录
 
 ### 🎯 微信公众号「兰秋说AI」
 - AI 行业最新动态
@@ -77,6 +48,7 @@ pubDate: 2026-01-04
 ## 我的项目
 
 - 🤖 [Seek AI Tools](https://seekaitools.com/) - 收录 10000+ AI 工具的中文导航站
+- 🎨 [乌鸦AI](https://crow.video/) - AI 驱动的电商视觉创作平台
 - 🗣️ [嗨乐学英语](https://hitalk.metasouls.space/) - AI 驱动的英语学习平台
 
 ## 联系方式
@@ -94,7 +66,7 @@ pubDate: 2026-01-04
 
 本站基于 [Astro](https://astro.build) 构建，使用 [AntfuStyle Theme](https://github.com/lin-stephanie/astro-antfustyle-theme) 主题。所有文章内容均为原创或经授权转载，欢迎分享，但请注明出处。
 
-**最后更新**: 2026年1月
+**最后更新**: 2026年5月
 
 ---
 

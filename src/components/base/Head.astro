@@ -67,14 +67,83 @@ const blogPostingData = {
 // https://jsonld.com/web-page/
 const webPageData = {
   '@context': 'https://schema.org',
-  '@type': 'webPage',
+  '@type': 'WebSite',
   'name': `${title || SITE.title}`,
   ...(description && { description: description }),
-  'publisher': {
-    '@type': 'ProfilePage',
-    'name': `${SITE.author}'s Personal Website`,
+  'url': canonicalURL.href,
+  'author': {
+    '@type': 'Person',
+    'name': SITE.author,
+    'url': SITE.website,
   },
 }
+
+// Breadcrumb helper
+const segmentNames: Record<string, string> = {
+  blog: '博客',
+  news: 'AI 资讯',
+  about: '关于我',
+  friends: '友情链接',
+  calligraphy: '手写书法',
+  photographs: '摄影作品',
+  projects: '项目',
+  changelog: '更新日志',
+}
+
+function buildBreadcrumb(url: URL): object | undefined {
+  const path = url.pathname.replace(/\/$/, '')
+  if (!path || path === '') return undefined
+
+  const segments = path.split('/').filter(Boolean)
+  const items: { position: number; name: string; item: string }[] = [
+    { position: 1, name: '首页', item: `${url.origin}/` },
+  ]
+
+  let current = ''
+  for (let i = 0; i < segments.length; i++) {
+    current += '/' + segments[i]
+    const segment = segments[i]
+    // Skip slug segments (non-mapped, looks like a dynamic ID)
+    const name = segmentNames[segment]
+    if (!name && segment.includes('-')) {
+      // Likely a post slug, use page title as name
+      items.push({
+        position: i + 2,
+        name: pageTitle.split(' - ')[0],
+        item: `${url.origin}${current}/`,
+      })
+      break
+    }
+    if (name) {
+      items.push({ position: i + 2, name, item: `${url.origin}${current}/` })
+    }
+  }
+
+  // Don't emit breadcrumb for single-level pages (just Home > Page)
+  if (items.length <= 2 && items[items.length - 1]?.name !== '博客') {
+    // Only suppress for really shallow pages like /about/ /friends/
+    // But keep for /blog/ since blog listing is important
+    if (segments.length === 1 && segments[0] !== 'blog') {
+      return undefined
+    }
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': items,
+  }
+}
+
+const breadcrumbData = buildBreadcrumb(Astro.url)
+const graphItems = [pubDate ? blogPostingData : webPageData]
+if (breadcrumbData) {
+  graphItems.push(breadcrumbData)
+}
+const jsonLdGraph =
+  graphItems.length > 1
+    ? { '@context': 'https://schema.org', '@graph': graphItems }
+    : graphItems[0]
 ---
 
 <!-- Global Metadata -->
@@ -141,20 +210,10 @@ const webPageData = {
 />
 
 <!-- Google JSON-LD Structured Data -->
-{
-  pubDate ? (
-    <script
-      is:inline
-      type="application/ld+json"
-      set:html={JSON.stringify(blogPostingData)}
-    />
-  ) : (
-    <script
-      is:inline
-      type="application/ld+json"
-      set:html={JSON.stringify(webPageData)}
-    />
-  )
-}
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(jsonLdGraph)}
+/>
 
 <ViewTransitions />
