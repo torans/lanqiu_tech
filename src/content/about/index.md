@@ -48,8 +48,8 @@ pubDate: 2026-05-04
 ## 我的项目
 
 - 🤖 [Seek AI Tools](https://seekaitools.com/) - 收录 10000+ AI 工具的中文导航站
-- 🎨 [乌鸦AI](https://crow.video/) - AI 驱动的电商视觉创作平台
-- 🗣️ [嗨乐学英语](https://hitalk.metasouls.space/) - AI 驱动的英语学习平台
+- 🎨 [乌鸦AI](https://crow.video/) - 全能电商视觉AI创作平台
+- 🗣️ [兰秋GEO](https://geo.lanqiu.tech/) - 聚焦AI内容生成与GEO搜索优化
 
 ## 联系方式
 
