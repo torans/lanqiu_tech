@@ -15,7 +15,11 @@ interface Props {
 const { title, description, ogImage, pubDate, lastModDate } = Astro.props
 
 const pageTitle =
-  title && title !== SITE.title ? `${title} - ${SITE.title}` : SITE.title
+  title && title !== SITE.title
+    ? title.includes(SITE.title)
+      ? title
+      : `${title} - ${SITE.title}`
+    : SITE.title
 
 const pageDescription = description || SITE.description
 
@@ -64,19 +68,37 @@ const blogPostingData = {
   },
 }
 
-// https://jsonld.com/web-page/
-const webPageData = {
+// Schema.org Structured Data
+const isHomePage = Astro.url.pathname === '/' || canonicalURL.pathname === '/'
+
+const websiteData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  'name': `${title || SITE.title}`,
-  ...(description && { description: description }),
-  'url': canonicalURL.href,
+  'name': '兰秋 Tech Lab',
+  'alternateName': ['兰秋', '兰秋说 AI', 'lanqiu.tech'],
+  'url': SITE.website,
+  'description': SITE.description,
   'author': {
     '@type': 'Person',
     'name': SITE.author,
     'url': SITE.website,
   },
 }
+
+const webPageData = isHomePage
+  ? websiteData
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      'name': pageTitle,
+      ...(pageDescription && { description: pageDescription }),
+      'url': canonicalURL.href,
+      'isPartOf': {
+        '@type': 'WebSite',
+        'name': '兰秋 Tech Lab',
+        'url': SITE.website,
+      },
+    }
 
 // Breadcrumb helper
 const segmentNames: Record<string, string> = {

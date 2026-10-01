@@ -1,7 +1,7 @@
 ---
-title: '专注于AI Agent与大语言模型应用的全栈技术博客'
+title: '兰秋 Tech Lab | 出海独立站极速架构 & AI Agent 自动化顾问'
 subtitle: ''
-description: '专注于AI技术应用、自动化工作流与全栈开发。分享AI Agent、大语言模型、GEO、Agent、Skill等前沿技术内容。'
+description: '兰秋（Lanqiu）的技术实验室与顾问主页：专注于现代化 B2B 出海独立站（Astro + Cloudflare 极速架构）、企业级 AI Agent 自动化生产流水线、以及生成式引擎优化（GEO）。'
 bgType: plum
 toc: false
 ogImage: false
@@ -9,19 +9,22 @@ ogImage: false
 
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
-import ListView from '~/components/views/ListView.astro'
 import WechatQRFloat from '~/components/widgets/WechatQRFloat.astro'
 import { getCollection } from 'astro:content'
 
 export const blogPosts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5)
 
-export const newsItems = (await getCollection('news'))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 5)
+export const featuredPosts = blogPosts.filter((post) =>
+  [
+    'b2b-packaging-website-guide-2026',
+    'capgo-geo-ultimate-guide',
+    'geo-seo-industrialization-breakdown',
+    'cloudflare-workers-vpc-guide',
+    'grok-hermes-agent-integration',
+  ].includes(post.slug)
+)
 
 <BaseLayout
   title={frontmatter.title}
@@ -30,105 +33,237 @@ export const newsItems = (await getCollection('news'))
   ogImage={frontmatter.ogImage}
 >
   <StandardLayout>
-    <div slot="wide" class="px-4 mt-8 max-w-65ch mx-auto">
-      {/* Header */}
-      <div class="slide-enter-content">
-        <h1 class="text-3xl font-bold mb-4">
-          兰秋说 AI
+    <div slot="wide" class="px-4 mt-8 max-w-75ch mx-auto">
+      {/* Hero Header */}
+      <div class="slide-enter-content mb-16">
+        <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-mono tracking-wider uppercase bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"/>
+          Engineering & AI Agent Lab
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">
+          兰秋 Tech Lab
         </h1>
-        <p class="text-lg op-60 mb-6 leading-relaxed">
-          专注于 AI 技术应用、自动化工作流与全栈开发。<br />
-          分享 AI Agent、大语言模型、GEO、Agent、Skill 等前沿技术内容。
+        <p class="text-xl op-90 font-medium mb-4 text-emerald-700 dark:text-emerald-400">
+          让现代工程架构与 AI Agent，成为出海业务增长的最高杠杆。
+        </p>
+        <p class="text-base op-70 leading-relaxed mb-8">
+          你好，我是<strong>兰秋（Lanqiu）</strong>。全栈工程师、自动化系统构建者与出海技术顾问。<br />
+          专注于 <strong>现代化 B2B 出海独立站</strong>（Astro + Cloudflare 边缘计算极速网络）、<strong>企业级 AI Agent 自动化生产流水线</strong>，以及 <strong>GEO（AI 搜索优化 / Generative Engine Optimization）</strong> 实战落地。<br />
+          不谈空泛概念，只交付能跑在生产环境的高性能系统与真实海外业务转化。
         </p>
 
-        <div class="flex flex-wrap gap-4 mb-16">
-          <a href="/blog" class="flex items-center gap-2 px-3 py-1.5 rounded bg-gray/5 hover:bg-gray/10 transition-colors text-current no-underline">
-            <span class="i-ri-article-line"/>
-            <span>博客</span>
+        <div class="flex flex-wrap items-center gap-3 text-sm">
+          <a href="#cases" class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-medium transition-all no-underline shadow-sm">
+            实战标杆案例 ↓
           </a>
-          <a href="/news" class="flex items-center gap-2 px-3 py-1.5 rounded bg-gray/5 hover:bg-gray/10 transition-colors text-current no-underline">
-            <span class="i-ri-newspaper-line"/>
-            <span>AI 资讯</span>
+          <a href="#services" class="px-4 py-2 rounded-lg bg-gray/10 hover:bg-gray/15 transition-all text-current no-underline font-medium">
+            产品化服务清单
           </a>
-          <a href="/about" class="flex items-center gap-2 px-3 py-1.5 rounded bg-gray/5 hover:bg-gray/10 transition-colors text-current no-underline">
-            <span class="i-ri-user-line"/>
-            <span>关于我</span>
+          <a href="#contact" class="px-4 py-2 rounded-lg border border-gray/20 hover:border-gray/40 transition-all text-current no-underline">
+            预约技术咨询
           </a>
-        </div>
-      </div>
-
-      {/* Featured Lists - Minimalist */}
-      <div class="slide-enter-content" style="--enter-stage: 1;">
-        <h2 class="text-xl font-bold mb-4 opacity-90">核心主题</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-          <a href="/blog/tag/geo" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="i-carbon-search text-xl op-70 group-hover:op-100 transition-opacity"/>
-              <span class="font-bold op-80 group-hover:op-100">GEO & AI 搜索优化</span>
-            </div>
-            <p class="text-sm op-50">GEO + SEO + RAG 实战，抢占 AI 搜索时代的内容红利</p>
-          </a>
-          <a href="/blog/tag/agent" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="i-carbon-bot text-xl op-70 group-hover:op-100 transition-opacity"/>
-              <span class="font-bold op-80 group-hover:op-100">AI Agent 开发</span>
-            </div>
-            <p class="text-sm op-50">构建智能化的自动化工作流与 AI 助手</p>
-          </a>
-          <a href="/blog/" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="i-carbon-chart-relationship text-xl op-70 group-hover:op-100 transition-opacity"/>
-              <span class="font-bold op-80 group-hover:op-100">MCP & AI 工具链</span>
-            </div>
-            <p class="text-sm op-50">用 Model Context Protocol 打通 AI 与工具生态，构建 Agent 基础设施</p>
-          </a>
-          <a href="/blog/" class="group block p-4 rounded hover:bg-gray/5 transition-all border border-transparent hover:border-gray/10 text-current no-underline">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="i-carbon-edit text-xl op-70 group-hover:op-100 transition-opacity"/>
-              <span class="font-bold op-80 group-hover:op-100">前端 & 全栈实战</span>
-            </div>
-            <p class="text-sm op-50">React、Konva、Astro 等项目里的真实踩坑记录</p>
+          <a href="/blog" class="px-4 py-2 rounded-lg text-current op-60 hover:op-100 transition-opacity no-underline">
+            技术白皮书库 →
           </a>
         </div>
       </div>
 
-      {/* Latest Posts - Simple List */}
-      <div class="slide-enter-content" style="--enter-stage: 2;">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xl font-bold opacity-90">最新文章</h2>
-          <a href="/blog" class="text-sm op-50 hover:op-100 transition-opacity no-underline">View all →</a>
+      {/* Section 1: Featured Cases */}
+      <div id="cases" class="slide-enter-content mb-16" style="--enter-stage: 1;">
+        <div class="flex items-center justify-between mb-6 pb-2 border-b border-gray/10">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight">核心战绩与标杆案例</h2>
+            <p class="text-xs op-50 font-mono mt-1 uppercase tracking-wider">Proof of Work & Real Production Metrics</p>
+          </div>
         </div>
-        <div class="flex flex-col gap-3 mb-12">
-          {blogPosts.map(post => (
-            <a href={`/blog/${post.slug}`} class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 group no-underline text-current">
-              <span class="text-sm op-40 font-mono whitespace-nowrap">
-                {post.data.pubDate.toISOString().split('T')[0]}
-              </span>
-              <span class="op-80 group-hover:op-100 group-hover:underline decoration-dashed underline-offset-4 transition-all">
+
+        <div class="flex flex-col gap-6">
+          {/* Case 1: CraftPack Global */}
+          <div class="p-6 rounded-xl border border-gray/10 bg-gray/5 hover:border-emerald-500/30 transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span class="text-lg font-bold">CraftPack Global — 工业包装高端出海独立站</span>
+              <div class="flex gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono">Astro v7 + Cloudflare</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono">Google Top 3</span>
+              </div>
+            </div>
+            <p class="text-sm op-70 leading-relaxed mb-4">
+              全套基于 Astro + Cloudflare 边缘计算现代化架构交付，实现全球首屏秒开（TTFB &lt; 50ms）。彻底摆脱传统外贸站臃肿脆弱的 WordPress 架构。以 Google Search Console（GSC）真实搜索词库为驱动，全自动接入 Agnes Image 2.5 Flash 商业级出图与高门槛工业采购指南全自动化生产流，多个核心商用大词稳居 Google 首页前列。
+            </p>
+            <div class="flex flex-wrap gap-4 text-xs font-mono op-60 mb-4">
+              <span>⚡️ Lighthouse 95+ 全绿跑分</span>
+              <span>🌍 全球边缘 CDN 零月租托管</span>
+              <span>🤖 AI 自动化发稿与 IndexNow 秒级收录</span>
+            </div>
+            <div class="flex items-center gap-4 text-sm font-medium">
+              <a href="https://craftpackglobal.com" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:underline">
+                访问在线生产站点 ↗
+              </a>
+              <span class="op-20">|</span>
+              <a href="/blog/b2b-packaging-website-guide-2026" class="text-current op-70 hover:op-100 hover:underline">
+                阅读建站实战复盘白皮书 →
+              </a>
+            </div>
+          </div>
+
+          {/* Case 2: GEO & AI Search Optimization */}
+          <div class="p-6 rounded-xl border border-gray/10 bg-gray/5 hover:border-emerald-500/30 transition-all">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span class="text-lg font-bold">GEO（生成式引擎优化）— AI 搜索时代的流量突围</span>
+              <div class="flex gap-1.5">
+                <span class="text-xs px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 font-mono">GEO = SEO + RAG</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 font-mono">Perplexity / SearchGPT</span>
+              </div>
+            </div>
+            <p class="text-sm op-70 leading-relaxed mb-4">
+              深入解构下一代 AI 搜索引擎（Perplexity、ChatGPT Search、Google AI Overviews）的抓取与推荐权重算法。从传统的“堆砌关键词 SEO”升级为“知识实体注入与高可信引用网络构建”，帮助出海品牌在生成式问答时代率先建立权威认知垄断。
+            </p>
+            <div class="flex items-center gap-4 text-sm font-medium">
+              <a href="/blog/capgo-geo-ultimate-guide" class="text-emerald-600 dark:text-emerald-400 hover:underline">
+                阅读 GEO 落地实操指南 →
+              </a>
+              <span class="op-20">|</span>
+              <a href="/blog/geo-seo-industrialization-breakdown" class="text-current op-70 hover:op-100 hover:underline">
+                工业化体系拆解 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Section 2: Productized Services */}
+      <div id="services" class="slide-enter-content mb-16" style="--enter-stage: 2;">
+        <div class="flex items-center justify-between mb-6 pb-2 border-b border-gray/10">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight">产品化服务矩阵</h2>
+            <p class="text-xs op-50 font-mono mt-1 uppercase tracking-wider">Productized Services & Solutions</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Service 1 */}
+          <div class="p-5 rounded-xl border border-gray/10 bg-gray/5 flex flex-col justify-between">
+            <div>
+              <div class="text-2xl mb-3">🚀</div>
+              <h3 class="text-base font-bold mb-2">B2B 外贸独立站极速全案交付</h3>
+              <p class="text-xs op-60 leading-relaxed mb-4">
+                告别 WordPress / Shopify 臃肿卡顿、巨额月租与插件安全漏洞。交付 Astro 7 全球极速边缘架构 + Sveltia CMS 极简后台 + 完整 B2B 询盘表单与 SEO 结构化数据。
+              </p>
+            </div>
+            <ul class="text-xs op-75 space-y-1.5 list-none p-0 mb-4 font-mono">
+              <li>✓ 全球秒开 TTFB &lt; 50ms</li>
+              <li>✓ 0 月租、抗高并发攻击</li>
+              <li>✓ 极速通过 Google 核心体验</li>
+            </ul>
+          </div>
+
+          {/* Service 2 */}
+          <div class="p-5 rounded-xl border border-gray/10 bg-gray/5 flex flex-col justify-between">
+            <div>
+              <div class="text-2xl mb-3">🤖</div>
+              <h3 class="text-base font-bold mb-2">企业级 AI Agent 自动化工作流定制</h3>
+              <p class="text-xs op-60 leading-relaxed mb-4">
+                为出海企业打造“专属 AI 数字员工”。基于 MCP（Model Context Protocol）与自研 Agent 流程，打通产品知识库，实现行业技术文章批量生成、商业出图、自动排版与秒级推送。
+              </p>
+            </div>
+            <ul class="text-xs op-75 space-y-1.5 list-none p-0 mb-4 font-mono">
+              <li>✓ 去 AI 味的高门槛工业内容</li>
+              <li>✓ 专属 Agnes 商业 WebP 出图</li>
+              <li>✓ 自动化 Git 与 IndexNow 推送</li>
+            </ul>
+          </div>
+
+          {/* Service 3 */}
+          <div class="p-5 rounded-xl border border-gray/10 bg-gray/5 flex flex-col justify-between">
+            <div>
+              <div class="text-2xl mb-3">🎯</div>
+              <h3 class="text-base font-bold mb-2">GEO & 海外 SEO 深度技术诊断</h3>
+              <p class="text-xs op-60 leading-relaxed mb-4">
+                针对已有出海独立站进行底层技术重构、JSON-LD 结构化数据补齐、GSC 真实搜索词攻坚战术路线图制定，全面抢占 Google 与 AI 搜索推荐高地。
+              </p>
+            </div>
+            <ul class="text-xs op-75 space-y-1.5 list-none p-0 mb-4 font-mono">
+              <li>✓ Google Site Name / 实体修复</li>
+              <li>✓ 真实 GSC 词库攻坚清单</li>
+              <li>✓ Perplexity / SearchGPT 引用提升</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Section 3: Tech Stack & Architecture */}
+      <div class="slide-enter-content mb-16" style="--enter-stage: 3;">
+        <div class="p-6 rounded-xl border border-gray/10 bg-gray/5">
+          <h2 class="text-sm font-bold uppercase tracking-wider op-50 font-mono mb-4">
+            Core Technology Stack & Architecture
+          </h2>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-2.5 py-1 rounded bg-gray/10">Astro v5 / v7</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">Cloudflare Workers & Pages</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">TypeScript / React</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">Model Context Protocol (MCP)</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">Antigravity AI / Gemini 2.5</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">Cloudflare D1 / KV</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">Generative Engine Optimization (GEO)</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">Sveltia CMS / Decap</span>
+            <span class="px-2.5 py-1 rounded bg-gray/10">UnoCSS / Tailwind</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Section 4: Selected Writings */}
+      <div id="writings" class="slide-enter-content mb-16" style="--enter-stage: 4;">
+        <div class="flex items-center justify-between mb-6 pb-2 border-b border-gray/10">
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight">精选技术白皮书</h2>
+            <p class="text-xs op-50 font-mono mt-1 uppercase tracking-wider">Selected Writings & Engineering Notes</p>
+          </div>
+          <a href="/blog" class="text-xs font-mono op-50 hover:op-100 transition-opacity no-underline">
+            全部文章 ({blogPosts.length}) →
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          {featuredPosts.map((post) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-lg hover:bg-gray/5 transition-all text-current no-underline group"
+            >
+              <span class="text-sm font-medium op-80 group-hover:op-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 {post.data.title}
+              </span>
+              <span class="text-xs op-40 font-mono whitespace-nowrap">
+                {post.data.pubDate.toISOString().split('T')[0]}
               </span>
             </a>
           ))}
         </div>
       </div>
 
-      {/* AI News - Compact List */}
-      <div class="slide-enter-content" style="--enter-stage: 3;">
-         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xl font-bold opacity-90">AI 资讯</h2>
-          <a href="/news" class="text-sm op-50 hover:op-100 transition-opacity no-underline">View all →</a>
-        </div>
-         <div class="flex flex-col gap-3 mb-12">
-          {newsItems.map(post => (
-            <a href={`/news/${post.slug}`} class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 group no-underline text-current">
-              <span class="text-sm op-40 font-mono whitespace-nowrap">
-                {post.data.pubDate.toISOString().split('T')[0]}
-              </span>
-              <span class="op-80 group-hover:op-100 group-hover:underline decoration-dashed underline-offset-4 transition-all">
-                {post.data.title}
-              </span>
-            </a>
-          ))}
+      {/* Section 5: Contact & Let's Talk */}
+      <div id="contact" class="slide-enter-content mb-12" style="--enter-stage: 5;">
+        <div class="p-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="max-w-45ch">
+            <h2 class="text-2xl font-bold mb-2">准备好升级你的出海技术与 AI 杠杆了吗？</h2>
+            <p class="text-sm op-70 leading-relaxed mb-4">
+              无论您是需要打造一套高性能出海独立站、构建专属企业级 AI 自动化工作流，还是进行深度技术诊断，欢迎直接与我联系。<br />
+              <strong>带着具体业务需求沟通，提供一次 30 分钟免费架构与出海 SEO 诊断。</strong>
+            </p>
+            <div class="flex flex-wrap items-center gap-4 text-xs font-mono op-80">
+              <span>📧 邮箱：504788375@qq.com</span>
+              <span>💬 微信公众号：兰秋说 AI</span>
+            </div>
+          </div>
+          <div class="text-center shrink-0">
+            <div class="p-3 bg-white rounded-xl shadow-md border border-gray/10 inline-block">
+              <img
+                src="/images/writtens/wechat-qrcode.jpg"
+                alt="兰秋微信公众号二维码"
+                class="w-32 h-32 rounded-lg block"
+              />
+            </div>
+            <p class="text-xs op-60 mt-2 font-mono">扫码微信直接沟通</p>
+          </div>
         </div>
       </div>
     </div>

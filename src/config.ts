@@ -3,8 +3,9 @@ import type { Site, Ui, Features } from './types'
 export const SITE: Site = {
   website: 'https://lanqiu.tech/',
   base: '/',
-  title: '兰秋AI',
-  description: '分享 AI 相关的新闻、智能体、AI自动化工作流等前沿内容。',
+  title: '兰秋 Tech Lab',
+  description:
+    '兰秋的技术实验室：专注于现代化 B2B 出海独立站（Astro + Cloudflare 极速架构）、AI Agent 自动化生产流水线、以及生成式引擎优化（GEO）。',
   author: '兰秋十六',
   lang: 'zh-CN',
   ogLocale: 'zh_CN',
@@ -19,16 +20,16 @@ export const UI: Ui = {
       text: '首页',
     },
     {
+      path: '/blog',
+      title: 'Blog/案例与白皮书',
+      displayMode: 'alwaysText',
+      text: '案例与白皮书',
+    },
+    {
       path: '/news',
       title: 'AI News/AI新闻',
       displayMode: 'alwaysText',
       text: 'AI新闻',
-    },
-    {
-      path: '/blog',
-      title: 'Blog/博客',
-      displayMode: 'alwaysText',
-      text: '博客',
     },
 
     // {
